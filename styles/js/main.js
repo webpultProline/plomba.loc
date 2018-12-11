@@ -155,8 +155,67 @@ $(function(){
 		}
 	}
 	
+	/*
+	--------------
+	Поля для ввода
+	--------------
 	
-	/**/
+			if($(this).val() != ''){
+				if($(this).hasClass('form__input--phone-full') == true){
+					console.log($(this).val().indexOf('_'))
+					if($(this).val().indexOf('_') == -1){
+						check_input++;
+					}
+				} else {
+					check_input++;
+				}
+			}
+	
+	*/
+	if($('.label--input').length > 0){
+		if($('.phone--input').length > 0){
+			$('.phone--input').inputmask({"mask": "+7 (999) 999-99-99"});
+		}
+		
+		$('.label--input input').each(function(){
+			if($(this).hasClass('phone--input') == true){
+				if($(this).val().indexOf('_') == -1 && $(this).val() != ''){
+					$(this).parents('.label--input').addClass('focus');
+				}
+			} else {
+				if($(this).val() != ''){
+					$(this).parents('.label--input').addClass('focus');
+				}
+			}
+		});
+		
+		$('.label--input input').focusin(function(){
+			if($(this).hasClass('phone--input') == true){
+				if($(this).val().indexOf('_') == -1 && $(this).val() == ''){
+					$(this).parents('.label--input').addClass('focus');
+				}
+			} else {
+				if($(this).val() == ''){
+					$(this).parents('.label--input').addClass('focus');
+				}
+			}
+		}).focusout(function(){
+			if($(this).hasClass('phone--input') == true){
+				if($(this).val().indexOf('_') == -1 && $(this).val() == ''){
+					$(this).parents('.label--input').removeClass('focus');
+				}
+			} else {
+				if($(this).val() == ''){
+					$(this).parents('.label--input').removeClass('focus');
+				}
+			}
+		});
+	}
+	/*
+	--------------
+	Сервисы на главной странице
+	--------------
+	*/
 	if($(".services-second__scroll").length > 0){
 		$(".services-second__scroll").mCustomScrollbar({
 			axis: 'y'

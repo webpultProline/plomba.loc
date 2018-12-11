@@ -292,6 +292,62 @@ main {
 	background-color: #ff301c;
 	
 }
+
+
+
+.label--input {
+	display: block;
+	width: 100%;
+	height: 53px;
+	border-radius: 10px;
+	border: 1px solid #f3f3f3;
+	margin: 0 0 20px 0;
+	
+	position: relative;
+	left: 0;
+	top: 0;
+}
+.label--input span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 51px;
+	border-radius: 10px;
+	background: #f3f3f3;
+	text-align: center;
+	line-height: 51px;
+	color: #000000;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 400;
+	cursor: pointer;
+	transition: width .35s;
+}
+.label--input span sup {
+	color: #ff0000;
+    line-height: 1;
+    top: -3px;
+}
+.label--input input {
+	height: 51px;
+	line-height: 51px;
+	border: 0;
+	outline: none;
+	background: transparent;
+	font-size: 15px;
+	color: #2b2e34;
+	font-weight: 400;
+	border-radius: 10px;
+	display: block;
+	width: 100%;
+	padding: 0 0 0 117px;
+	margin: 0;
+}
+
+.label--input.focus span {
+	width: 102px;
+}
 /*----------------------- Шапка -----------------------*/
 .header-top {
 	display: block;
@@ -1028,6 +1084,7 @@ main {
 	left: 0;
 	top: 0;
 	z-index: 1;
+	margin-bottom: 66px
 }
 .feedback--row {
 	display: block;
@@ -1185,6 +1242,37 @@ main {
 
 .feedback--row .slider {
 	margin-bottom: 67px;
+}
+/*----------------------- Нижняя часть главной страницы -----------------------*/
+.main--bottom {
+	display: block;
+	width: 100%;
+	position: relative;
+	left: 0;
+	top: 0;
+}
+.main--bottom--form {
+	display: block;
+	width: 514px;
+	padding: 0 15px;
+}
+.main--bottom--form form {
+	display: block;
+	width: 100%;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.21);
+	padding: 43px 50px 50px
+}
+.main--bottom--form h2 {
+	text-transform: uppercase;
+    font-family: "BigNoodleTitlingCyr";
+    font-weight: 700;
+	margin: 0 0 43px 0;
+	color: #ff301c;
+	font-size: 35px;
+	display: block;
+	width: 100%;
+	text-align: center;
 }
 /*----------------------- Подвал -----------------------*/
 .map {
