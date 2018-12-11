@@ -154,4 +154,12 @@ $(function(){
 			});
 		}
 	}
+	
+	
+	/**/
+	if($(".services-second__scroll").length > 0){
+		$(".services-second__scroll").mCustomScrollbar({
+			axis: 'y'
+		});
+	}
 });
