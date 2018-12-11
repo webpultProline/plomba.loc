@@ -451,7 +451,6 @@ main {
 }
 /*----------------------- Карусель на главной странице -----------------------*/
 .main--carousel {
-	min-height: 689px;
 	position: relative;
 	left: 0;
 	top: 0;
@@ -471,13 +470,13 @@ main {
 .main--carousel:after {
 	position: absolute;
 	left: 0;
-	bottom: 0;
+	bottom: 0!important;
 	z-index: 4;
 	width: 100%;
 	height: 328px;
-	background-position: center;
+	background-position: center bottom;
 	background-repeat: no-repeat;
-	background-size: auto 100%;
+	background-size: auto 328px;
 	background-image: url(../img/main-carousel/sloi-1.svg);
 	content: '';
 }
@@ -492,7 +491,7 @@ main {
 	
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: auto 100%;
+	background-size: auto 826px;
 	background-image: url(../img/main-carousel/sloi-2.svg);
 }
 .main--carousel--background-image {
