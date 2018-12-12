@@ -1,4 +1,67 @@
 $(function(){
+	function custom_selectEvents(status_,onactive_,parent_,parent_class_){
+		window.custom_select = status_;
+		window.custom_select_block = onactive_;
+		window.custom_select_parent = parent_;
+		window.custom_select_parent_class = parent_class_;
+	}
+
+	$(window).click(function(event){
+		if(window.custom_select == true){
+			if($(event.target).parents().hasClass(window.custom_select_parent_class) == false && $(event.target).hasClass(window.custom_select_parent_class) == false){
+				if(window.custom_select_block == false){
+					window.custom_select_parent.removeClass('openOnEvent');
+				}
+			}
+			window.custom_select_block = false;
+		}
+	});
+	
+	/*Фиксы в IE 10*/
+	var doc = document.documentElement;
+	var user_agent = navigator.userAgent;
+	if(navigator.userAgent.indexOf("Firefox") !== -1){
+		var start_ = user_agent.split('x');
+		var first_ = start_[1];
+		var second_ = first_.split('/');
+		var third_ = parseInt(second_[1],10);
+		if(third_ >= 47 && third_ < 50){
+			doc.setAttribute('data-useragent', 'Firefox');
+		}
+	}
+	
+	
+	
+	if(navigator.userAgent.indexOf("MSIE 10.0") !== -1){
+		doc.setAttribute('data-useragent', 'MSIE 10.0');
+	}
+	/*конец*/
+	/*Поиск в шапке*/
+	$('.search--row').on('submit', function(event){
+		if($(this).find('button').hasClass('openOnEvent') == false){
+			$('.openOnEvent').removeClass('openOnEvent');
+			custom_selectEvents(true,false,$(this).find('button'),'search--row__input');
+			$(this).find('button').addClass('openOnEvent');
+			event.preventDefault();
+		}
+	});
+	/*конец*/
+	/*Мобильная навигация*/
+	$('.header--nav__mobile-btn').click(function(){
+		if($(this).hasClass('openOnEvent') == false){
+			$('.openOnEvent').removeClass('openOnEvent');
+			custom_selectEvents(true,true,$(this),'header--nav__mobile');
+			$(this).addClass('openOnEvent');
+		} else {
+			custom_selectEvents(false,false,$(this),'header--nav__mobile');
+			$(this).removeClass('openOnEvent');
+		}
+	});
+	/*конец*/
+	
+	
+	
+	
 	if($('.main--carousel-row').length > 0){
 		var length_slide = $('.main--carousel-row').find('.main--carousel-item').length;
 		if(length_slide < 10){

@@ -19,13 +19,14 @@
 			<div class="header-top">
 				<div class="container">
 					<div class="row">
-						<a href="#" class="col-lg-3 header--logo">
-							<img src="styles/img/logo.jpg" alt="">
+						<a href="#" class="col-lg-3 col-md-6 col-sm-6 header--logo">
+							<img src="styles/img/logo.jpg" alt="" class="d-sm-block d-none">
+							<img src="styles/img/logo--footer.jpg" alt="" class="d-sm-none d-block">
 						</a>
-						<div class="col-lg-6 header-top--company">
+						<div class="col-lg-6 header-top--company d-lg-flex d-none">
 							<h1 class="header-top--company-text">ЦЕНТР СОВРЕМЕННОЙ СТОМАТОЛОГИИ</h1>
 						</div>
-						<div class="col-lg-3 header-top--contact">
+						<div class="col-lg-3 col-md-6 col-sm-6 header-top--contact">
 							<ul class="contact--info">
 								<li>
 									<span class="contact--info-image tel"></span>
@@ -44,7 +45,13 @@
 				<div class="container">
 					<div class="row">
 						<nav class="header--nav">
-							<ul>
+							<button class="header--nav__mobile-btn">
+								<span></span>
+								<span></span>
+								<span></span>
+							</button>
+						
+							<ul class="header--nav__mobile">
 								<li>
 									<a href="#">Главная</a>
 								</li>
@@ -73,6 +80,11 @@
 									<a href="#">Контакты</a>
 								</li>
 							</ul>
+							
+							<form class="search--row">
+								<button></button>
+								<input type="search" class="search--row__input" placeholder="Введите ключевое слово...">
+							</form>
 						</nav>
 					</div>
 				</div>
@@ -170,13 +182,13 @@
 						<h2 class="section--title"><span>УСЛУГИ</span> КЛИНИКИ</h2>
 						
 						<div class="services--row">
-							<div class="col-lg-4">
+							<div class="col-lg-4 col-md-6">
 								<div class="services--item">
 									<div class="services--item__first" style="background-image: url(styles/img/temp/service--1.jpg)">
 										<p>КОМПЛЕКСНАЯ<br>ДИАГНОСТИКА</p>
 									</div>
 									<div class="services--item__second">
-										<p>ЛЕЧЕНИЕ ЗУБОВ ТЕРАПИЯ</p>
+										<p>КОМПЛЕКСНАЯ ДИАГНОСТИКА</p>
 										<div class="services-second__scroll">
 											<ul>
 												<li><a href="#">Эффективные методы постановки диагноза</a></li>
@@ -190,13 +202,13 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-lg-4 col-md-6">
 								<div class="services--item">
 									<div class="services--item__first" style="background-image: url(styles/img/temp/service--2.jpg)">
 										<p>лечение зубов<br>терапия</p>
 									</div>
 									<div class="services--item__second">
-										<p>ЛЕЧЕНИЕ ЗУБОВ ТЕРАПИЯ</p>
+										<p>лечение зубов терапия</p>
 										<div class="services-second__scroll">
 											<ul>
 												<li><a href="#">Эффективные методы постановки диагноза</a></li>
@@ -210,13 +222,13 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-lg-4 col-md-6">
 								<div class="services--item">
 									<div class="services--item__first" style="background-image: url(styles/img/temp/service--3.jpg)">
 										<p>ПРОТЕЗИРОВАНИЕ<br>ЗУБОВ</p>
 									</div>
 									<div class="services--item__second">
-										<p>ЛЕЧЕНИЕ ЗУБОВ ТЕРАПИЯ</p>
+										<p>ПРОТЕЗИРОВАНИЕ ЗУБОВ</p>
 										<div class="services-second__scroll">
 											<ul>
 												<li><a href="#">Эффективные методы постановки диагноза</a></li>
@@ -230,13 +242,13 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-lg-4 col-md-6">
 								<div class="services--item">
 									<div class="services--item__first" style="background-image: url(styles/img/temp/service--4.jpg)">
 										<p>ИМПЛАНТАЦИЯ<br>ЗУБОВ</p>
 									</div>
 									<div class="services--item__second">
-										<p>ЛЕЧЕНИЕ ЗУБОВ ТЕРАПИЯ</p>
+										<p>ИМПЛАНТАЦИЯ ЗУБОВ</p>
 										<div class="services-second__scroll">
 											<ul>
 												<li><a href="#">Эффективные методы постановки диагноза</a></li>
@@ -250,13 +262,13 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-lg-4 col-md-6">
 								<div class="services--item">
 									<div class="services--item__first" style="background-image: url(styles/img/temp/service--5.jpg)">
 										<p>ХИРУРГИЯ И<br>ХИРУРГИЧЕСКАЯ<br>ПАРОДОНТОЛОГИЯ</p>
 									</div>
 									<div class="services--item__second">
-										<p>ЛЕЧЕНИЕ ЗУБОВ ТЕРАПИЯ</p>
+										<p>ХИРУРГИЯ И ХИРУРГИЧЕСКАЯ ПАРОДОНТОЛОГИЯ</p>
 										<div class="services-second__scroll">
 											<ul>
 												<li><a href="#">Эффективные методы постановки диагноза</a></li>
@@ -270,13 +282,13 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-lg-4 col-md-6">
 								<div class="services--item">
 									<div class="services--item__first" style="background-image: url(styles/img/temp/service--6.jpg)">
 										<p>ГИГИЕНА,<br>ПАРОДОНТОЛОГИЯ,<br>ПРОФИЛАКТИКА</p>
 									</div>
 									<div class="services--item__second">
-										<p>ЛЕЧЕНИЕ ЗУБОВ ТЕРАПИЯ</p>
+										<p>ГИГИЕНА, ПАРОДОНТОЛОГИЯ, ПРОФИЛАКТИКА</p>
 										<div class="services-second__scroll">
 											<ul>
 												<li><a href="#">Эффективные методы постановки диагноза</a></li>
@@ -290,13 +302,13 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-lg-4 col-md-6">
 								<div class="services--item">
 									<div class="services--item__first" style="background-image: url(styles/img/temp/service--7.jpg)">
 										<p>ОТБЕЛИВАНИЕ<br>ЗУБОВ</p>
 									</div>
 									<div class="services--item__second">
-										<p>ЛЕЧЕНИЕ ЗУБОВ ТЕРАПИЯ</p>
+										<p>ОТБЕЛИВАНИЕ ЗУБОВ</p>
 										<div class="services-second__scroll">
 											<ul>
 												<li><a href="#">Эффективные методы постановки диагноза</a></li>
@@ -310,13 +322,13 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-lg-4 col-md-6">
 								<div class="services--item">
 									<div class="services--item__first" style="background-image: url(styles/img/temp/service--8.jpg)">
 										<p>ИСПРАВЛЕНИЕ ПРИКУСА<br>ОРТОДОНТИЯ</p>
 									</div>
 									<div class="services--item__second">
-										<p>ЛЕЧЕНИЕ ЗУБОВ ТЕРАПИЯ</p>
+										<p>ИСПРАВЛЕНИЕ ПРИКУСА ОРТОДОНТИЯ</p>
 										<div class="services-second__scroll">
 											<ul>
 												<li><a href="#">Эффективные методы постановки диагноза</a></li>
@@ -330,13 +342,13 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-lg-4 col-md-6">
 								<div class="services--item">
 									<div class="services--item__first" style="background-image: url(styles/img/temp/service--9.jpg)">
 										<p>детская<br>стоматолгоия</p>
 									</div>
 									<div class="services--item__second">
-										<p>ЛЕЧЕНИЕ ЗУБОВ ТЕРАПИЯ</p>
+										<p>детская стоматолгоия</p>
 										<div class="services-second__scroll">
 											<ul>
 												<li><a href="#">Эффективные методы постановки диагноза</a></li>
@@ -362,43 +374,43 @@
 				
 				<div class="commands--row slider" data-variableWidth="1" data-count_def="6" data-xl_count="5" data-lg_count="4" data-md_count="2" data-sm_count="1" data-arrowNav="1" data-fade="1" data-autoPlay="1">
 					<a href="#" class="commands--item">
-						<div style="background-image: url(styles/img/temp/commands--1.jpg)">
+						<div class="commands--item__card" style="background-image: url(styles/img/temp/commands--1.jpg)">
 							<h3>Фамилия <br>имя отчество</h3>
 							<p>Стоматолог-ортодонт</p>
 						</div>
 					</a>
 					<a href="#" class="commands--item">
-						<div style="background-image: url(styles/img/temp/commands--1.jpg)">
+						<div class="commands--item__card" style="background-image: url(styles/img/temp/commands--1.jpg)">
 							<h3>Фамилия <br>имя отчество</h3>
 							<p>Стоматолог-ортодонт</p>
 						</div>
 					</a>
 					<a href="#" class="commands--item">
-						<div style="background-image: url(styles/img/temp/commands--1.jpg)">
+						<div class="commands--item__card" style="background-image: url(styles/img/temp/commands--1.jpg)">
 							<h3>Фамилия <br>имя отчество</h3>
 							<p>Стоматолог-ортодонт</p>
 						</div>
 					</a>
 					<a href="#" class="commands--item">
-						<div style="background-image: url(styles/img/temp/commands--1.jpg)">
+						<div class="commands--item__card" style="background-image: url(styles/img/temp/commands--1.jpg)">
 							<h3>Фамилия <br>имя отчество</h3>
 							<p>Стоматолог-ортодонт</p>
 						</div>
 					</a>
 					<a href="#" class="commands--item">
-						<div style="background-image: url(styles/img/temp/commands--1.jpg)">
+						<div class="commands--item__card" style="background-image: url(styles/img/temp/commands--1.jpg)">
 							<h3>Фамилия <br>имя отчество</h3>
 							<p>Стоматолог-ортодонт</p>
 						</div>
 					</a>
 					<a href="#" class="commands--item">
-						<div style="background-image: url(styles/img/temp/commands--1.jpg)">
+						<div class="commands--item__card" style="background-image: url(styles/img/temp/commands--1.jpg)">
 							<h3>Фамилия <br>имя отчество</h3>
 							<p>Стоматолог-ортодонт</p>
 						</div>
 					</a>
 					<a href="#" class="commands--item">
-						<div style="background-image: url(styles/img/temp/commands--1.jpg)">
+						<div class="commands--item__card" style="background-image: url(styles/img/temp/commands--1.jpg)">
 							<h3>Фамилия <br>имя отчество</h3>
 							<p>Стоматолог-ортодонт</p>
 						</div>
@@ -439,7 +451,7 @@
 			
 			<div class="main--bottom">
 				<div class="container">
-					<div class="row">
+					<div class="row flex-nowrap">
 						<div class="main--bottom--form col-auto">
 							<form>
 								<h2>записаться на прием</h2>
@@ -455,7 +467,32 @@
 									<span>e-mail</span>
 									<input type="email" placeholder="Ваш E-MAIL">
 								</label>
+								
+								<p>Нажимая кнопку “Отправить”, Вы даете согласие на обработку <a href="#">персональных данных</a></p>
+								<button class="button">записаться на прием</button>
 							</form>
+						</div>
+						
+						<div class="main--bottom--price col-auto">
+							<h2 class="section--title"><span>НАШИ</span> ЦЕНЫ НЕ КУСАЮТСЯ </h2>
+							<table>
+								<tbody>
+									<tr>
+										<td><span>Удаление зуба простое</span></td>
+										<td><span>от 2500 р</span></td>
+									</tr>
+									<tr>
+										<td><span>Лечение кариеса с установкой пломбы</span></td>
+										<td><span>от 2500 р</span></td>
+									</tr>
+									<tr>
+										<td><span>Коронка металлокерамическая</span></td>
+										<td><span>10 000 p</span></td>
+									</tr>
+								</tbody>
+							</table>
+							
+							<a href="#" class="button">все цены</a>
 						</div>
 					</div>
 				</div>
@@ -474,7 +511,7 @@
 						</div>
 						<div class="col-lg-4">
 							<nav class="footer--links">
-								<ul>
+								<ul class="header--nav__mobile">
 									<li><a href="#">Главная</a></li>
 									<li><a href="#">Специалисты</a></li>
 									<li><a href="#">О клинике</a></li>
