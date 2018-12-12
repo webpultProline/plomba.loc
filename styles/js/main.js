@@ -39,10 +39,10 @@ $(function(){
 	/*конец*/
 	/*Поиск в шапке*/
 	$('.search--row').on('submit', function(event){
-		if($(this).find('button').hasClass('openOnEvent') == false){
+		if($('.search--row').find('button').hasClass('openOnEvent') == false){
 			$('.openOnEvent').removeClass('openOnEvent');
-			custom_selectEvents(true,false,$(this).find('button'),'search--row__input');
-			$(this).find('button').addClass('openOnEvent');
+			custom_selectEvents(true,false,$('.search--row').find('button'),'search--row');
+			$('.search--row').find('button').addClass('openOnEvent');
 			event.preventDefault();
 		}
 	});
