@@ -30,8 +30,6 @@ $(function(){
 		}
 	}
 	
-	console.log(navigator.userAgent);
-	
 	if(navigator.userAgent.indexOf("MSIE 10.0") !== -1){
 		doc.setAttribute('data-useragent', 'MSIE 10.0');
 	}
