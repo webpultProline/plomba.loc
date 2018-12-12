@@ -581,6 +581,9 @@ input::-ms-clear , textarea::-ms-clear , input::-ms-reveal {
 html[data-useragent='MSIE 10.0'] .main--carousel:after {
 	bottom: -30px;
 }
+html[data-useragent='MSIE 11.0'] .main--carousel:after {
+	bottom: -50px;
+}
 .main--carousel:before {
 	position: absolute;
 	left: -235px;
@@ -594,6 +597,9 @@ html[data-useragent='MSIE 10.0'] .main--carousel:after {
 	background-repeat: no-repeat;
 	background-size: auto 826px;
 	background-image: url(../img/main-carousel/sloi-2.svg);
+}
+html[data-useragent='MSIE 11.0'] .main--carousel:before {
+	bottom: -65px
 }
 .main--carousel--background-image {
 	position: absolute;
@@ -1300,6 +1306,23 @@ html[data-useragent='MSIE 10.0'] .main--carousel:after {
 	z-index: 6;
 }
 
+.feedback--row .slick-arrow {
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 5;
+    border: 1px solid #636365;
+    opacity: 1;
+}
+.feedback--row .slick-arrow:before {
+    color: #636365;
+}
+.feedback--row .slick-prev {
+	left: 0;
+}
+.feedback--row .slick-next {
+	right: 0;
+}
+
 .feedback--slide {
 	display: block;
 	padding-left: 267px;
@@ -1450,9 +1473,11 @@ html[data-useragent='MSIE 10.0'] .main--carousel:after {
 }
 .main--bottom--price table tr > td {
 	overflow: hidden;
+	padding-bottom: 15px;
+	vertical-align: bottom
 }
 .main--bottom--price table tr > td:first-child {
-	width: 89%
+	width: 88%
 }
 .main--bottom--price table tr > td span {
 	color: #000000;
@@ -1461,7 +1486,7 @@ html[data-useragent='MSIE 10.0'] .main--carousel:after {
 	font-family: "BigNoodleTitlingCyr";
 	font-weight: 700;
 	margin: 0;
-	display: inline-block;
+	display: inline;
 	margin-bottom: 15px;
 	background: #fff;
 	
@@ -1474,11 +1499,11 @@ html[data-useragent='MSIE 10.0'] .main--carousel:after {
 	width: 100vw;
 	position: absolute;
 	left: 0;
-	bottom: 0.4em;
+	bottom: 0.2em;
 	z-index: -1;
 	border-bottom: 2px dotted #bebebe
 }
-html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child span:after , html[data-useragent='Firefox'] .main--bottom--price table tr > td:first-child span:after {
+html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child span:after , html[data-useragent='Firefox'] .main--bottom--price table tr > td:first-child span:after , html[data-useragent='MSIE 11.0'] .main--bottom--price table tr > td:first-child span:after {
 	bottom: 0.2em;
 }
 .main--bottom--price table tr > td:nth-child(2) span {
@@ -1597,6 +1622,13 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	.services-second__scroll {
 		height: 122px
 	}
+	/*----------------------- Нижняя часть главной страницы -----------------------*/
+	.main--bottom--price table tr > td:first-child {
+		width: 76%
+	}
+	.main--bottom--price table tr > td:first-child span:after {
+		bottom: 0.2em
+	}
 }
 @media(max-width: 991px){
 	/*----------------------- Шапка -----------------------*/
@@ -1689,6 +1721,28 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 		width: 33.3333%;
 		margin-bottom: 30px
 	}
+	/*----------------------- Нижняя часть главной страницы -----------------------*/
+	.main--bottom {
+		padding-bottom: 30px;
+	}
+	.main--bottom > .container > .row {
+		-ms-flex-wrap: wrap!important;
+		flex-wrap: wrap!important;
+	}
+	.main--bottom--form {
+		order: 2;
+	}
+	.main--bottom--price {
+		order: 1;
+		padding-left: 15px;
+		margin-bottom: 15px;
+	}
+	.main--bottom--price table tr > td:first-child {
+		width: 90%
+	}
+	.main--bottom--price .section--title {
+		margin-bottom: 10px;
+	}
 }
 @media(max-width: 768px){
 	.section--title {
@@ -1745,6 +1799,59 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	.section--services {
 		margin-bottom: 0
 	}
+	/*----------------------- Отзывы на главной -----------------------*/
+	.section--feedback {
+		margin-bottom: 30px
+	}
+	.feedback--row {
+		padding-top: 0
+	}
+	.feedback--slide {
+		padding-left: 0;
+		padding-right: 0
+	}
+	.feedback--slide__photo {
+		position: static;
+		left: 0;
+		top: 0;
+		margin-bottom: 15px
+	}
+		
+	.feedback--row .slick-arrow {
+		top: -59px;
+		right: auto;
+		left: 50%;
+	}
+	.feedback--row .slick-prev {
+		transform: translateY(0) translateX(-125%)
+	}
+	.feedback--row .slick-next {
+		transform: translateY(0) translateX(25%)
+	}
+	.feedback--row:before {
+		width: 257px;
+		height: 273px;
+		background: url(../img/svg/feedback/tooth.svg) center no-repeat;
+		background-size: 257px 273px;
+	}
+	/*----------------------- Нижняя часть главной страницы -----------------------*/
+	.main--bottom--price table tr > td:first-child {
+		width: 86%
+	}
+	/*----------------------- Подвал -----------------------*/
+	.footer--logo {
+		margin-bottom: 20px
+	}
+	.footer--logo > img {
+		margin: 0 auto
+	}
+	
+	.footer-bottom__row > p:nth-child(2) {
+		text-align: right;
+	}
+	.footer-bottom__row > p:last-child {
+		text-align: center
+	}
 }
 @media(max-width: 576px){
 	/*----------------------- Шапка -----------------------*/
@@ -1796,6 +1903,46 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	.header-top--contact .contact--info li > span:not(.contact--info-image), .header-top--contact .contact--info li > a {
 		font-size: 14px
 	}
+	/*----------------------- Подвал -----------------------*/
+	.footer--links ul li {
+		margin-bottom: 10px
+	}
+	.footer-top .contact--info li:not(:last-child) {
+		margin-bottom: 12px;
+	}
+	.contact--info li > .contact--info-image.tel:before {
+		font-size: 16px;
+	}
+	.contact--info li > .contact--info-image.adres:before {
+		font-size: 14px;
+	}
+	.contact--info li > .contact--info-image.clock:before {
+		font-size: 15px;
+	}
+	.contact--info li > .contact--info-image.mail:before {
+		font-size: 12px;
+	}
+	.contact--info li > span:not(.contact--info-image) , .contact--info li > a {
+		font-size: 14px
+	}
+	.footer-bottom__row > p:first-child , .footer-bottom__row > p:nth-child(2) , .footer-bottom__row > p:last-child {
+		text-align: center;
+	}
+	.footer--links ul li a {
+		font-size: 14px
+	}
+	.footer-bottom__row > p {
+		margin: 5px 0;
+	}
+	.map {
+		height: 50vh;
+	}
+}
+@media(max-width: 514px){
+	/*----------------------- Нижняя часть главной страницы -----------------------*/
+	.main--bottom--form {
+		width: 100%
+	}
 }
 @media(max-width: 490px){
 	/*----------------------- Шапка -----------------------*/
@@ -1808,6 +1955,29 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	}
 	.search--row button.openOnEvent {
 		transform: translateX(-13px) translateY(49px)
+	}
+	/*----------------------- Нижняя часть главной страницы -----------------------*/
+	.main--bottom--price table tr > td:first-child {
+		width: 70vw
+	}
+}
+@media(max-width: 460px){
+	/*----------------------- Наши специалисты -----------------------*/
+	.commands--row {
+		padding-left: 13px;
+		padding-right: 13px
+	}
+	.commands--row .slick-arrow {
+		top: -51px;
+		transform: translateY(0) translateX(-50%);
+		right: auto;
+		left: 50%;
+	}
+	.commands--row .slick-prev {
+		transform: translateY(0) translateX(-125%);
+	}
+	.commands--row .slick-next {
+		transform: translateY(0) translateX(25%);
 	}
 }
 @media(max-width: 420px){
@@ -1834,8 +2004,19 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 		left: 20px;
 		top: 20px;
 	}
+	/*----------------------- Нижняя часть главной страницы -----------------------*/
+	.main--bottom--form form {
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-bottom: 35px;
+		padding-top: 30px
+	}
+	.main--bottom--form h2 {
+		margin-bottom: 15px
+	}
 }
 @media(hover: none){
+	/*----------------------- Сервис -----------------------*/
 	.services--item {
 		height: 492px;
 		box-shadow: 0 0 10px 0 rgba(0,0,0,0.21);
@@ -1850,5 +2031,19 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	}
 	.services-second__scroll {
 		height: 197px;
+	}
+	/*----------------------- Отзывы на главной -----------------------*/
+	.commands--item__card {
+		padding-top: 165px;
+		border: 1px solid rgba(0,0,0,0.21)
+	}
+	.commands--item__card:after {
+		opacity: 1;
+		height: 50%;
+		top: auto;
+		bottom: 0
+	}
+	.commands--item__card > h3 , .commands--item__card > p {
+		opacity: 1;
 	}
 }

@@ -30,10 +30,13 @@ $(function(){
 		}
 	}
 	
-	
+	console.log(navigator.userAgent);
 	
 	if(navigator.userAgent.indexOf("MSIE 10.0") !== -1){
 		doc.setAttribute('data-useragent', 'MSIE 10.0');
+	}
+	if(navigator.userAgent.match(/Trident/) && navigator.userAgent.match(/rv[ :]11/)){
+		doc.setAttribute('data-useragent', 'MSIE 11.0');
 	}
 	/*конец*/
 	/*Поиск в шапке*/
@@ -284,4 +287,33 @@ $(function(){
 			axis: 'y'
 		});
 	}
+	/*
+	-----
+	Карта
+	-----
+	*/
+    ymaps.ready(init);
+    function init(){ 
+        // Создание карты.    
+        var myMap = new ymaps.Map("map--bottom", {
+            center: [55.540730, 37.489967],
+            zoom: 7
+        });
+		var myPlacemark;
+		myPlacemark = new ymaps.Placemark(myMap.getCenter(),
+			{
+				hideIcon: false
+			},
+			{
+				iconLayout: 'default#image',
+				iconImageHref: 'styles/img/map--logo.png',
+				iconImageSize: [71, 80],
+				iconImageOffset: [-35.5, -80]
+			});
+		myMap.geoObjects
+			.add(myPlacemark);
+			
+		myMap.behaviors.disable('scrollZoom');
+		myMap.setZoom(16)
+    }
 });
