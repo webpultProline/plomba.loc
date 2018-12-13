@@ -298,6 +298,121 @@ input::-ms-clear , textarea::-ms-clear , input::-ms-reveal {
 	
 }
 
+/*модальные окна*/
+body.openModal {
+	overflow: hidden;
+}
+.modal {
+	display: block;
+	
+	visibility: hidden;
+	transform: translateY(-100%);
+	
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: transparent;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling:touch;
+	z-index: 999;
+	transition: visibility .35s , transform .35s , background-color 1.05s;
+}
+.modal.openModal {
+	background-color: rgba(43,46,52,0.5);
+	visibility: visible;
+	transform: translateY(0);
+}
+.modal-container {
+	display: block;
+	width: 526px;
+	margin: 25px auto;
+	border-radius: 10px;
+	padding: 0 50px 50px;
+	transform: translateY(-50%);
+	opacity: 0;
+	transition: opacity .5s , transform .5s;
+	
+	background: #FFF url(../img/svg/feedback/tooth.svg) center right -11px no-repeat;
+	background-size: auto 246px;
+}
+.modal.openModal .modal-container {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.modal-head {
+	display: block;
+	width: 100%;
+	position: relative;
+	left: 0;
+	top: 0;
+	padding-top: 47px;
+}
+.modal-head > p {
+	display: inline-block;
+	width: auto;
+	margin: 0;
+	line-height: 1;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	font-weight: 700;
+	color: #2b2e34;
+	font-size: 25px;
+	text-transform: uppercase
+}
+
+.modal-body {
+	padding: 10px 0 0 0;
+	position: relative;
+	
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	-ms-flex-line-pack: start;
+	align-content: flex-start;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+.modal-body > p {
+	display: block;
+	width: 100%;
+	text-align: center;
+	color: #2b2e34;
+	font-size: 17px
+}
+.modal-body > .button {
+	margin-top: 29px;
+}
+
+.modal-scrollbar-measure {
+	position: absolute;
+	top: -9999px;
+	width: 50px;
+	height: 50px;
+	overflow: scroll;
+}
+@media(max-width: 526px){
+	/*модальные окна*/
+	.modal-container {
+		width: 100%;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.modal.openModal .modal-container {
+		margin: 0;
+		border-radius: 0
+	}
+}
+/*конец*/
 
 
 .label--input {
@@ -352,6 +467,22 @@ input::-ms-clear , textarea::-ms-clear , input::-ms-reveal {
 
 .label--input.focus span {
 	width: 102px;
+}
+
+.label--input.error--input {
+	border-color: #ff0000;
+	background-color: #ff0000;
+}
+.label--input.error--input span {
+	width: 102px;
+	color: #fff;
+	background-color: #ff0000;
+}
+.label--input.error--input span sup {
+	color: #fff;
+}
+.label--input.error--input input {
+	background-color: #fff;
 }
 /*----------------------- Шапка -----------------------*/
 .header-top {
@@ -1728,6 +1859,8 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	.main--bottom > .container > .row {
 		-ms-flex-wrap: wrap!important;
 		flex-wrap: wrap!important;
+		-ms-flex-pack: center;
+		justify-content: center;
 	}
 	.main--bottom--form {
 		order: 2;

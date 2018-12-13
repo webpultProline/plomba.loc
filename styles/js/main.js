@@ -218,32 +218,107 @@ $(function(){
 			});
 		}
 	}
+	/*
+	--------------
+	модальные окна
+	--------------
+	*/
+	if($('.phone_input').length > 0){
+		$('.phone_input').inputmask({"mask": "+7 (999) 999-99-99"});
+	}
+	$('.openModalBTN').click(function(event){
+		event.preventDefault();
+		_setScrollbar();
+		$('body').addClass('openModal');
+		var targetBlock = $(this).attr('data-targetModal');
+		$('.modal').removeClass('openModal');
+		$('#'+targetBlock).addClass('openModal');
+	});
+	function openModal(targetBlock){
+		_setScrollbar();
+		$('body').addClass('openModal');
+		$('.modal').removeClass('openModal');
+		$('#'+targetBlock).addClass('openModal');
+	};
+	$('.close-modal').click(function(){
+		$('body').removeClass('openModal');
+		_resetScrollbar();
+		$(this).parents('.modal').removeClass('openModal');
+	});
+	$(window).click(function(event){
+		if($(event.target).hasClass('modal') == true){
+			if($('.mobile-menu_btn').hasClass('open-menu') == false){
+				$('body').removeClass('openModal');
+				_resetScrollbar();
+			}
+			$(event.target).removeClass('openModal');
+		}
+	});
 	
+	function _setScrollbar() {
+		var rect = document.body.getBoundingClientRect();
+		var _isBodyOverflowing = rect.left + rect.right < window.innerWidth;
+		var _scrollbarWidth = _getScrollbarWidth();
+        if(_isBodyOverflowing){
+			$('body').css('padding-right',_scrollbarWidth+'px');
+        }
+	};
+	
+	function _resetScrollbar(){
+		$('body').css('padding-right','0px');
+	}
+	
+	function _getScrollbarWidth() {
+		var scrollDiv = document.createElement('div');
+		scrollDiv.className = 'modal-scrollbar-measure';
+		document.body.appendChild(scrollDiv);
+		var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
+		document.body.removeChild(scrollDiv);
+		return scrollbarWidth;
+	};
 	/*
 	--------------
 	Поля для ввода
 	--------------
-	
-			if($(this).val() != ''){
-				if($(this).hasClass('form__input--phone-full') == true){
-					console.log($(this).val().indexOf('_'))
-					if($(this).val().indexOf('_') == -1){
-						check_input++;
-					}
-				} else {
-					check_input++;
-				}
-			}
-	
 	*/
 	if($('.label--input').length > 0){
+		//------------------------
+		//Проверка полей для ввода
+		//------------------------
+		function _checkPhone(value){
+			var phoneFilter = /^[+]*[7]\s[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
+			if(!phoneFilter.test(value)){
+				return false;
+			}
+			return true;
+		}
+		function _checkPhone_Start(value){
+			var phoneFilter = /^[+]*[7]\s[(]{0,1}([0-9][_]{2}|[0-9]{2}[_]|[0-9]){1,3}[)]{0,1}([-\s\./0-9]|\s([_]|[0-9]){3}[-]([_]|[0-9]){2}[-]([_]|[0-9]){2})*$/g;
+			if(!phoneFilter.test(value)){
+				return false;
+			}
+			return true;
+		}
+		function _validate(email){
+			var emailFilter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/g;
+			if (!emailFilter.test(email)) {
+				return false;
+			}
+			return true;
+		}
+		
+		
+		
+		
+		
+		
 		if($('.phone--input').length > 0){
 			$('.phone--input').inputmask({"mask": "+7 (999) 999-99-99"});
 		}
 		
 		$('.label--input input').each(function(){
 			if($(this).hasClass('phone--input') == true){
-				if($(this).val().indexOf('_') == -1 && $(this).val() != ''){
+				if(_checkPhone_Start($(this).val()) == true){
 					$(this).parents('.label--input').addClass('focus');
 				}
 			} else {
@@ -255,9 +330,7 @@ $(function(){
 		
 		$('.label--input input').focusin(function(){
 			if($(this).hasClass('phone--input') == true){
-				if($(this).val().indexOf('_') == -1 && $(this).val() == ''){
-					$(this).parents('.label--input').addClass('focus');
-				}
+				$(this).parents('.label--input').addClass('focus');
 			} else {
 				if($(this).val() == ''){
 					$(this).parents('.label--input').addClass('focus');
@@ -265,13 +338,78 @@ $(function(){
 			}
 		}).focusout(function(){
 			if($(this).hasClass('phone--input') == true){
-				if($(this).val().indexOf('_') == -1 && $(this).val() == ''){
+				if(_checkPhone_Start($(this).val()) == false){
 					$(this).parents('.label--input').removeClass('focus');
+					$(this).parents('.label--input').removeClass('error--input');
 				}
 			} else {
 				if($(this).val() == ''){
 					$(this).parents('.label--input').removeClass('focus');
 				}
+			}
+		});
+	}
+	
+	
+	$('form').on('submit', function(event){
+		//
+		var $parent = $($(this)[0]['offsetParent']);
+		var $counter = 0;
+		$parent.find('[required]').each(function(){
+			if($(this).hasClass('phone--input') == true){
+				if(_checkPhone($(this).val()) == true){
+					$(this).parents('.label--input').removeClass('error--input');
+				} else {
+					$(this).parents('.label--input').addClass('error--input');
+					$counter++;
+				}
+			} else {
+				if($(this).hasClass('email--input') == false){
+					if($(this).val() == ''){
+						$(this).parents('.label--input').addClass('error--input');
+						$counter++;
+					} else {
+						$(this).parents('.label--input').removeClass('error--input');
+					}
+				} else {
+					if($(this).val() != ''){
+						if(_validate($(this).val()) == false){
+							$counter++;
+						}
+					}
+				}
+			}
+		});
+		if($counter == 0){
+			openModal($parent.find('.button').attr('data-targetModal'));
+		}
+		event.preventDefault();
+	});
+	
+	function _checkEmail(block){
+		if(block.val() != ''){
+			block.prop('required',true);
+			if(_validate(block.val()) == false){
+				block.parents('.label--input').addClass('error--input');
+			} else {
+				block.parents('.label--input').removeClass('error--input');
+			}
+		} else {
+			block.prop('required',false);
+		}
+	}
+	if($('.email--input').length > 0){
+		_checkEmail($('.email--input'));
+		//
+		$('.email--input').keyup(function(){
+			_checkEmail($(this));
+		});
+		$('.email--input').focusout(function(){
+			if($(this).val() == ''){
+				$(this).parents('.label--input').removeClass('error--input');
+				$(this).prop('required',false);
+			} else {
+				_checkEmail($(this));
 			}
 		});
 	}
@@ -286,9 +424,9 @@ $(function(){
 		});
 	}
 	/*
-	-----
+	--------------
 	Карта
-	-----
+	--------------
 	*/
     ymaps.ready(init);
     function init(){ 
