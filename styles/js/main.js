@@ -354,36 +354,39 @@ $(function(){
 	$('form').on('submit', function(event){
 		//
 		var $parent = $($(this)[0]['offsetParent']);
-		var $counter = 0;
-		$parent.find('[required]').each(function(){
-			if($(this).hasClass('phone--input') == true){
-				if(_checkPhone($(this).val()) == true){
-					$(this).parents('.label--input').removeClass('error--input');
-				} else {
-					$(this).parents('.label--input').addClass('error--input');
-					$counter++;
-				}
-			} else {
-				if($(this).hasClass('email--input') == false){
-					if($(this).val() == ''){
+		var $check_this = $($(this)[0]);
+		if($check_this.hasClass('search--row') == false){
+			var $counter = 0;
+			$parent.find('[required]').each(function(){
+				if($(this).hasClass('phone--input') == true){
+					if(_checkPhone($(this).val()) == true){
+						$(this).parents('.label--input').removeClass('error--input');
+					} else {
 						$(this).parents('.label--input').addClass('error--input');
 						$counter++;
-					} else {
-						$(this).parents('.label--input').removeClass('error--input');
 					}
 				} else {
-					if($(this).val() != ''){
-						if(_validate($(this).val()) == false){
+					if($(this).hasClass('email--input') == false){
+						if($(this).val() == ''){
+							$(this).parents('.label--input').addClass('error--input');
 							$counter++;
+						} else {
+							$(this).parents('.label--input').removeClass('error--input');
+						}
+					} else {
+						if($(this).val() != ''){
+							if(_validate($(this).val()) == false){
+								$counter++;
+							}
 						}
 					}
 				}
+			});
+			if($counter == 0){
+				openModal($parent.find('.button').attr('data-targetModal'));
 			}
-		});
-		if($counter == 0){
-			openModal($parent.find('.button').attr('data-targetModal'));
+			event.preventDefault();
 		}
-		event.preventDefault();
 	});
 	
 	function _checkEmail(block){
@@ -428,28 +431,30 @@ $(function(){
 	Карта
 	--------------
 	*/
-    ymaps.ready(init);
-    function init(){ 
-        // Создание карты.    
-        var myMap = new ymaps.Map("map--bottom", {
-            center: [55.540730, 37.489967],
-            zoom: 7
-        });
-		var myPlacemark;
-		myPlacemark = new ymaps.Placemark(myMap.getCenter(),
-			{
-				hideIcon: false
-			},
-			{
-				iconLayout: 'default#image',
-				iconImageHref: 'styles/img/map--logo.png',
-				iconImageSize: [71, 80],
-				iconImageOffset: [-35.5, -80]
+	if($('#map--bottom').length > 0){
+		ymaps.ready(init);
+		function init(){ 
+			// Создание карты.    
+			var myMap = new ymaps.Map("map--bottom", {
+				center: [55.540730, 37.489967],
+				zoom: 7
 			});
-		myMap.geoObjects
-			.add(myPlacemark);
-			
-		myMap.behaviors.disable('scrollZoom');
-		myMap.setZoom(16)
-    }
+			var myPlacemark;
+			myPlacemark = new ymaps.Placemark(myMap.getCenter(),
+				{
+					hideIcon: false
+				},
+				{
+					iconLayout: 'default#image',
+					iconImageHref: 'styles/img/map--logo.png',
+					iconImageSize: [71, 80],
+					iconImageOffset: [-35.5, -80]
+				});
+			myMap.geoObjects
+				.add(myPlacemark);
+				
+			myMap.behaviors.disable('scrollZoom');
+			myMap.setZoom(16)
+		}
+	}
 });

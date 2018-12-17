@@ -272,6 +272,27 @@ input::-ms-clear , textarea::-ms-clear , input::-ms-reveal {
 }
 
 
+.section--title.section--title__right {
+	text-align: left;
+}
+.section--title.section--title__right:after {
+	position: relative;
+	left: 0;
+	bottom: auto;
+	transform: translateX(0) translateY(-10px);
+	
+	width: 47px;
+	height: 7px;
+	
+	background: url(../img/svg/separator--right.svg) center no-repeat;
+	background-size: 47px 7px;
+	
+	content: '';
+	display: inline-block;
+	margin-left: 17px;
+}
+
+
 
 .button {
 	display: inline-block;
@@ -483,6 +504,61 @@ body.openModal {
 }
 .label--input.error--input input {
 	background-color: #fff;
+}
+
+
+.typography {
+	display: block;
+	width: 100%
+}
+.typography p {
+	display: block;
+	width: 100%;
+	font-size: 16px;
+	line-height: 25px;
+	margin: 0 0 20px 0;
+	color: #000000;
+}
+/*----------------------- Хлебные крошки -----------------------*/
+.bread--crumbs {
+	display: block;
+	width: 100%;
+	padding: 16px 0
+}
+.bread--crumbs ul {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+}
+.bread--crumbs ul li {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+.bread--crumbs ul li a {
+	display: block;
+	text-decoration: none!important;
+	font-size: 14px;
+	color: #000000;
+}
+.bread--crumbs ul li a:not(.bread--crumbs__current):after {
+	content: " / ";
+	display: inline-block;
+	margin: 0 0.3228571428571429em;
+}
+.bread--crumbs ul li a.bread--crumbs__current {
+	color: #ff301c;
 }
 /*----------------------- Шапка -----------------------*/
 .header-top {
@@ -1730,6 +1806,254 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 
 
 
+/*----------------------- Верх на странице о нас -----------------------*/
+.about--top {
+	display: block;
+	width: 100%;
+	position: relative;
+	left: 0;
+	top: 0;
+	z-index: 3;
+	margin-bottom: 42px
+}
+.about--top__background {
+	display: block;
+	width: 100%;
+	height: 702px;
+	
+	background-position: center top -56px;
+	background-repeat: no-repeat;
+	background-size: auto 97%;
+}
+.about--top:after {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    z-index: 4;
+    width: 100%;
+    height: 280px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: auto 280px;
+    background-image: url(../img/about/sloi-1.svg);
+    content: '';
+}
+/*----------------------- Контент на странице о нас -----------------------*/
+.about--main {
+	display: block;
+	width: 100%;
+	position: relative;
+	left: 0;
+	top: 0;
+	z-index: 3;
+	margin-bottom: 8px
+}
+.about--main .section--title {
+	margin-bottom: 14px
+}
+.about--main__image {
+	display: block;
+	width: 100%;
+	margin: 9px 0 43px 0
+}
+.about--main__image img {
+	display: block;
+	width: 100%;
+}
+/*----------------------- Лозунг на странице о нас -----------------------*/
+.credo--main {
+	display: block;
+	width: 100%;
+	position: relative;
+	left: 0;
+	top: 0;
+	padding-top: 144px;
+	padding-bottom: 90px;
+	margin-bottom: 57px;
+}
+
+.credo--main .feedback--row__background-top {
+    position: absolute;
+    left: 0;
+    top: -133px;
+    width: 100%;
+    height: 441px;
+}
+.credo--main .feedback--row__background-top:before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	content: '';
+	z-index: 2;
+	background: url(../img/about/credo--top__white.svg) center no-repeat;
+	background-size: auto 100%;
+}
+.credo--main .feedback--row__background-top:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    z-index: -2;
+	background: url(../img/about/credo--top__gray.svg) center no-repeat;
+    background-size: auto 100%;
+}
+
+.credo--main .feedback--row__background-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 275px;
+}
+.credo--main .feedback--row__background-bottom:before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	content: '';
+	z-index: -2;
+	background: url(../img/about/credo--bottom__gray.svg) center no-repeat;
+	background-size: auto 100%;
+}
+.credo--main .feedback--row__background-bottom:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    z-index: 2;
+    background: url(../img/about/credo--bottom__white.svg) center no-repeat;
+    background-size: auto 100%;
+}
+
+.credo--main:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    z-index: -3;
+    background-color: #eeeeee;
+}
+.credo--main:before {
+	position: absolute;
+	right: 293px;
+	top: 0;
+	z-index: -1;
+	display: block!important;
+	content: '';
+	width: 720px;
+	height: 100%;
+	background: url(../img/about/credo.png) center top 123px no-repeat;
+	background-size: auto 618px;
+}
+.credo--main .container {
+	position: relative;
+	left: 0;
+	top: 0;
+	z-index: 2
+}
+
+
+.credo--col {
+	padding-top: 52px;
+	padding-bottom: 119px;
+}
+.credo--col .section--title.section--title__right {
+	padding-bottom: 2px;
+	line-height: 1.2em;
+}
+.credo--col p {
+	font-size: 18px;
+	margin: 0;
+	color: #000000;
+	font-weight: 400;
+	line-height: 28px;
+	display: block;
+	width: 100%;
+	padding-right: 35px;
+	
+	text-shadow: 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee , 0 0 20px #eeeeee
+}
+/*----------------------- Форма обратной связи на внутрен. страницах -----------------------*/
+.inside--bottom {
+	display: block;
+	width: 100%;
+	padding: 5px 0 69px;
+	position: relative;
+	left: 0;
+	top: 0
+}
+.inside--bottom:after {
+	position: absolute;
+	left: 0;
+	bottom: -154px;
+	content: '';
+	z-index: -1;
+	background: url(../img/svg/form--feedback-bg.svg) center top no-repeat;
+	background-size: auto 478px;
+	width: 100%;
+	height: 478px;
+}
+.inside--bottom form {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    margin: 0;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.21);
+    background: #fff;
+    padding: 43px 21px 50px;
+}
+.inside--bottom form h2 {
+	text-transform: uppercase;
+	font-family: "BigNoodleTitlingCyr";
+	font-weight: 700;
+	margin: 0 0 43px 0;
+	color: #ff301c;
+	font-size: 35px;
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+.inside--bottom form p {
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin: 17px auto 29px;
+	color: #000000;
+	line-height: 17px;
+}
+.inside--bottom form p a {
+	text-decoration: none!important;
+	border-bottom: 1px solid #a5a5a5;
+	color: #000000;
+}
+.inside--bottom form p a:hover {
+	color: #ff301c;
+	border-bottom-color: #ff301c;
+}
+.inside--bottom form .label--row {
+	padding: 0 10px;
+	width: 33.333333%
+}
 
 
 
@@ -1737,6 +2061,27 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 
 
 
+
+
+
+
+
+
+@media(max-width: 1700px){
+	/*----------------------- Лозунг на странице о нас -----------------------*/
+	.credo--main:before {
+		right: 50px
+	}
+}
+@media(max-width: 1300px){
+	/*----------------------- Лозунг на странице о нас -----------------------*/
+	.credo--main:before {
+		width: 480px;
+		height: 100%;
+		background: url(../img/about/credo.png) center bottom -65px no-repeat;
+		background-size: auto 412px;
+	}
+}
 @media(max-width: 1200px){
 	/*----------------------- Шапка -----------------------*/
 	.header-top--company-text {
@@ -1752,6 +2097,10 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	/*----------------------- Сервис -----------------------*/
 	.services-second__scroll {
 		height: 122px
+	}
+	/*----------------------- Верх на странице о нас -----------------------*/
+	.about--top__background {
+		height: 450px
 	}
 	/*----------------------- Нижняя часть главной страницы -----------------------*/
 	.main--bottom--price table tr > td:first-child {
@@ -1876,6 +2225,14 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	.main--bottom--price .section--title {
 		margin-bottom: 10px;
 	}
+	/*----------------------- Лозунг на странице о нас -----------------------*/
+	.credo--main {
+		padding-bottom: 25vw
+	}
+	/*----------------------- Форма обратной связи на внутрен. страницах -----------------------*/
+	.inside--bottom form .label--row {
+		width: 50%
+	}
 }
 @media(max-width: 768px){
 	.section--title {
@@ -1985,6 +2342,25 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	.footer-bottom__row > p:last-child {
 		text-align: center
 	}
+	/*----------------------- Верх на странице о нас -----------------------*/
+	.about--top__background {
+		height: 350px
+	}
+	/*----------------------- Лозунг на странице о нас -----------------------*/
+	.credo--main {
+		padding-top: 75px
+	}
+	.credo--main .feedback--row__background-top {
+		top: -180px
+	}
+	/*----------------------- Форма обратной связи на внутрен. страницах -----------------------*/
+	.inside--bottom form .label--row {
+		width: 100%
+	}
+	/*----------------------- Верх на странице о нас -----------------------*/
+	.about--top {
+		margin-bottom: 0
+	}
 }
 @media(max-width: 576px){
 	/*----------------------- Шапка -----------------------*/
@@ -2070,6 +2446,13 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	.map {
 		height: 50vh;
 	}
+	/*----------------------- Лозунг на странице о нас -----------------------*/
+	.credo--main:before {
+		width: 100%;
+		background: url(../img/about/credo.png) center bottom -65px no-repeat;
+		background-size: 80% auto;
+		right: 0
+	}
 }
 @media(max-width: 514px){
 	/*----------------------- Нижняя часть главной страницы -----------------------*/
@@ -2079,10 +2462,13 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 }
 @media(max-width: 490px){
 	/*----------------------- Шапка -----------------------*/
+	.search--row input {
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.33);
+	}
 	.search--row button.openOnEvent + input {
 		transform: translateX(0) translateY(100%);
 		top: auto;
-		bottom: -11px;
+		bottom: -12px;
 		border-radius: 0;
 		width: 290px;
 	}
@@ -2146,6 +2532,11 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	}
 	.main--bottom--form h2 {
 		margin-bottom: 15px
+	}
+	/*----------------------- Форма обратной связи на внутрен. страницах -----------------------*/
+	.inside--bottom form .label--row {
+		padding-left: 0;
+		padding-right: 0
 	}
 }
 @media(hover: none){
