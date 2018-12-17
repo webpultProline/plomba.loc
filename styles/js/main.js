@@ -58,6 +58,9 @@ $(function(){
 			$(this).removeClass('openOnEvent');
 		}
 	});
+	$('.header--nav__mobile > li > ul > li').click(function(){
+		$(this).toggleClass('openSubMenu');
+	});
 	/*конец*/
 	
 	
