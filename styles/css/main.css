@@ -2214,6 +2214,307 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 .services--main__page .section--services:after {
 	display: none
 }
+/*----------------------- Список сервиса -----------------------*/
+.services--inner__page {
+	display: block;
+	width: 100%;
+	margin: 14px 0 50px 0
+}
+.services--inner__page .section--title {
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 14px
+}
+
+.services--items__list {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	width: 100%;
+	
+	padding: 32px 0 0 0;
+}
+.services--list__item {
+	width: 25%;
+	padding: 15px;
+	
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	
+	text-decoration: none!important
+	
+}
+
+.services--list__item--row {
+	display: block;
+	min-height: 140px;
+	width: 100%;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.21);
+	border-radius: 10px;
+	padding: 25px 18px 21px 20px;
+	
+	position: relative;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+.services--list__item--row:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #ff301c;
+    background-image: url(../img/svg/difference-item.svg);
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: center;
+    content: '';
+    opacity: 0;
+    transition: opacity .35s;
+}
+.services--list__item--row p {
+	display: block;
+	margin: 0;
+	width: 100%;
+	
+	font-size: 25px;
+	color: #000000;
+	line-height: 1.25em;
+	text-transform: uppercase;
+	font-family: "BigNoodleTitlingCyr";
+	font-weight: 700;
+	
+	position: relative;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	
+	transition: color .35s;
+}
+.services--list__item--row p span {
+	color: #ff301c;
+	
+	transition: color .35s;
+}
+.services--list__item:hover .services--list__item--row p , .services--list__item:hover .services--list__item--row p span {
+	color: #fff;
+}
+.services--list__item:hover .services--list__item--row:after {
+	opacity: 1;
+}
+
+.section--commands__inner.section--commands {
+	margin-bottom: 66px;
+}
+.section--commands__inner .commands--row {
+	padding-left: 0;
+	padding-right: 0
+}
+.section--commands__inner .commands--row .slick-prev {
+	left: -48px;
+}
+.section--commands__inner .commands--row .slick-next {
+	right: -46px;
+}
+/*----------------------- Услуга детально -----------------------*/
+.services--detail__main {
+	position: relative;
+	left: 0;
+	top: 0;
+	z-index: 3
+}
+.services--detail {
+	width: 100%;
+	margin: 17px 0 0 0;
+	
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+}
+.services--detail__image {
+	display: block;
+	margin: 5px 0 0 0;
+}
+.services--detail__image img {
+	display: block;
+	width: 100%;
+	border-radius: 10px;
+}
+.services--detail__text {
+	display: block;
+	padding-left: 35px;
+}
+.services--detail__text h2 {
+	display: block;
+	width: 100%;
+	text-align: left;
+	
+	color: #ff301c;
+	font-size: 27px;
+	text-transform: uppercase;
+	margin: 0 0 18px 0;
+	font-family: "BigNoodleTitlingCyr";
+	font-weight: 700;
+}
+
+.services--detail__info.credo--main {
+	padding-top: 128px;
+	padding-bottom: 168px;
+	margin-bottom: 60px;
+}
+.services--detail__info.credo--main .feedback--row__background-top {
+	top: -165px;
+}
+.credo--main.services--detail__info:before {
+	display: none!important
+}
+.services--detail__info--col h2 {
+	font-size: 25px;
+	color: #000000;
+	margin: 0 0 18px 0;
+	display: block;
+	width: 100%;
+	text-align: left;
+	text-transform: uppercase;
+	font-family: "BigNoodleTitlingCyr";
+	font-weight: 700;
+}
+.services--detail__info--col ul {
+	display: inline-block;
+	width: 100%;
+	margin: 0 0 24px 0;
+	padding: 0;
+}
+.services--detail__info--col ul li {
+    margin: 0 0 19px 0;
+    display: block;
+    width: 100%;
+	
+    padding: 0 0 0 16px;
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+	line-height: 25px;
+    color: #000000;
+}
+.services--detail__info--col ul li:before {
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 7px;
+    height: 7px;
+    border: 1px solid #202020;
+    border-radius: 100%;
+    content: '';
+    transition: border-color .35s;
+}
+
+.services--detail__info--col p {
+    margin: 0 0 25px 0;
+    display: block;
+    width: 100%;
+	text-align: left;
+	
+    font-size: 16px;
+	line-height: 25px;
+    color: #000000;
+}
+
+.services--table__price {
+	display: block;
+	width: 100%;
+	padding: 0 15px;
+	margin-bottom: 62px
+}
+
+
+.table--container {
+	display: block;
+	width: 100%
+}
+.table--row {
+	padding: 0 13px;
+	
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+}
+.table--row:first-child {
+	background-color: #ff301c;
+	border-radius: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.table--row:not(:first-child) {
+	padding-top: 24px;
+	padding-bottom: 26px;
+	border-bottom: 1px solid #e5e5e5
+}
+.table--row:not(:first-child) p:nth-child(3) {
+	font-size: 23px;
+	color: #ff301c;
+	text-transform: uppercase;
+	font-family: "BigNoodleTitlingCyr";
+	font-weight: 700;
+}
+.table--row p {
+	padding: 0 15px;
+	margin: 0;
+	display: block;
+	text-align: left;
+	
+	font-size: 16px;
+	color: #000000;
+	line-height: 25px;
+}
+.table--row p:first-child {
+	width: 362px
+}
+.table--row p:nth-child(2) {
+	width: 585px
+}
+
+.table--row:first-child p {
+	font-size: 23px;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-family: "BigNoodleTitlingCyr";
+	font-weight: 700;
+}
+
 
 
 
@@ -2239,6 +2540,22 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 		height: 100%;
 		background: url(../img/about/credo.png) center bottom -65px no-repeat;
 		background-size: auto 412px;
+	}
+	/*----------------------- Список сервиса -----------------------*/
+
+	.section--commands__inner .commands--row .slick-arrow {
+		top: -51px;
+		transform: translateY(0) translateX(-50%);
+		right: auto;
+		left: 50%;
+	}
+	.section--commands__inner .commands--row .slick-prev {
+		left: 50%;
+		transform: translateY(0) translateX(-125%);
+	}
+	.section--commands__inner .commands--row .slick-next {
+		left: 50%;
+		transform: translateY(0) translateX(25%);
 	}
 }
 @media(max-width: 1200px){
@@ -2267,6 +2584,13 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	}
 	.main--bottom--price table tr > td:first-child span:after {
 		bottom: 0.2em
+	}
+	/*----------------------- Услуга детально -----------------------*/ 
+	.table--row p:first-child {
+		width: 295px
+	}
+	.table--row p:nth-child(2) {
+		width: 425px
 	}
 }
 @media(max-width: 991px){
@@ -2334,7 +2658,7 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 		padding-right: 15px;
 		
 		transition: all .35s;
-		visibility: hidden;
+		display: none;
 		opacity: 0;
 		
 		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.25);
@@ -2343,7 +2667,7 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 		width: 100%
 	}
 	.header--nav__mobile-btn.openOnEvent + .header--nav__mobile {
-		visibility: visible;
+		display: block;
 		transform: translateY(100%);
 		opacity: 1;
 	}
@@ -2496,6 +2820,50 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	.inside--bottom form .label--row {
 		width: 50%
 	}
+	/*----------------------- Список сервиса -----------------------*/
+	.services--list__item {
+		width: 33.33333%
+	}
+	/*----------------------- Услуга детально -----------------------*/ 
+	.services--detail__image {
+		margin-bottom: 30px;
+	}
+	.services--detail__text {
+		padding-left: 15px;
+	}
+	
+	.services--detail__info.credo--main {
+		padding-bottom: 70px;
+	}
+	.table--row:first-child {
+		display: none!important
+	}
+	.table--row {
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	.table--row p:before {
+		display: block;
+		width: 100%;
+		font-size: 23px;
+		color: #ff301c;
+		text-transform: uppercase;
+		font-family: "BigNoodleTitlingCyr";
+		font-weight: 700;
+		content: attr(data-title__tbale);
+	}
+	.table--row p:first-child , .table--row p:nth-child(2) {
+		width: 50%
+	}
+	.table--row p:nth-child(3) {
+		width: 100%;
+		text-align: center;
+		margin-top: 20px;
+	}
+	.table--row p:nth-child(3):before {
+		color: #000;
+		text-align: center;
+	}
 }
 @media(max-width: 768px){
 	.section--title {
@@ -2624,6 +2992,30 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	.about--top {
 		margin-bottom: 0
 	}
+	/*----------------------- Список сервиса -----------------------*/
+	.services--list__item {
+		width: 50%
+	}
+	/*----------------------- Услуга детально -----------------------*/ 
+	.services--detail__info.credo--main {
+		margin-bottom: 30px
+	}
+	.table--row p:first-child , .table--row p:nth-child(2) {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.table--row p:nth-child(3) {
+		width: 100%;
+		text-align: left;
+		margin-top: 0;
+	}
+	.table--row p:nth-child(3):before {
+		color: #000;
+		text-align: left;
+	}
+	.services--table__price {
+		margin-bottom: 30px
+	}
 }
 @media(max-width: 576px){
 	/*----------------------- Шапка -----------------------*/
@@ -2722,6 +3114,23 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 		background: url(../img/about/credo.png) center bottom -65px no-repeat;
 		background-size: 80% auto;
 		right: 0
+	}
+	/*----------------------- Список сервиса -----------------------*/
+	.services--inner__page {
+		margin-bottom: 30px
+	}
+	.services--items__list {
+		padding-top: 0;
+	}
+	.services--list__item {
+		width: 100%;
+		padding-top: 7.5px;
+		padding-bottom: 7.5px
+	}
+	/*----------------------- Услуга детально -----------------------*/ 
+	.table--row , .table--row p {
+		padding-left: 0;
+		padding-right: 0
 	}
 }
 @media(max-width: 514px){
