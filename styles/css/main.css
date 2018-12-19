@@ -2699,7 +2699,6 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	line-height: 25px;
 }
 .table--row p:first-child {
-	width: 362px
 	width: 362px;
 	-ms-flex-positive: 1;
 	flex-grow: 1;
