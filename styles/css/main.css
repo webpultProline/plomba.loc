@@ -686,6 +686,41 @@ body.openModal {
 	display: inline-block;
 	margin-left: 9px
 }
+
+.lg-backdrop {
+	background-color: rgba(43,46,52,0.5);
+}
+.lg-sub-html, .lg-toolbar {
+	background-color: transparent;
+}
+.lg-hide-items .lg-toolbar , .lg-hide-items .lg-prev , .lg-hide-items .lg-next {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+#lg-zoom-out , #lg-zoom-in , .lg-fullscreen , .lg-autoplay-button {
+	display: none!important
+}
+.lg-toolbar .lg-icon {
+	color: #fff;
+	padding: 0;
+	width: 31px;
+	height: 31px;
+	border-radius: 100%;
+	background-color: #ff301c;
+	position: relative;
+	left: 0;
+	top: 0;
+	transform: translate(-20px,20px);
+}
+.lg-toolbar .lg-icon:after {
+    font-size: 21px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%) translateY(4px);
+    line-height: 22px;
+}
 /*----------------------- Хлебные крошки -----------------------*/
 .bread--crumbs {
 	display: block;

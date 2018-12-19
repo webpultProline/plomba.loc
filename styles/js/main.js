@@ -431,6 +431,22 @@ $(function(){
 	}
 	/*
 	--------------
+	Галерея
+	--------------
+	*/
+	if($('.certificate--gallery').length > 0){
+		$('main').lightGallery({
+			download: false,
+			counter: false,
+			share: false,
+			autoplay: false,
+			actualSize: false,
+			thumbnail: false,
+			selector: '.certificate--gallery'
+		});
+	}
+	/*
+	--------------
 	Карта
 	--------------
 	*/
