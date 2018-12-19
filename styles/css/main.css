@@ -2502,9 +2502,15 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 }
 .table--row p:first-child {
 	width: 362px
+	width: 362px;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
 }
 .table--row p:nth-child(2) {
 	width: 585px
+}
+.table--row p:last-child {
+	width: 167px
 }
 
 .table--row:first-child p {
