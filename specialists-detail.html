@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Фамилия Имя Отчество</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+		<link rel="stylesheet" href="styles/slick/slick.css">
+		<link rel="stylesheet" href="styles/customscrollbar/jquery.mCustomScrollbar.css">
+		
+		<link rel="stylesheet" href="styles/css/bootstrap-grid.css">
+		<link rel="stylesheet" href="styles/css/main.css">
+	</head>
+	<body>
+		<div class="modal" id="feedback">
+			<div class="modal-container">
+				<div class="modal-head">
+					<p>Спасибо</p>
+				</div>
+				<div class="modal-body">
+					<p>В ближайшее время менеджер Вам перезвонит</p>
+					<button class="button close-modal">ок</button>
+				</div>
+			</div>
+		</div>
+		
+		<header>
+			<div class="header-top">
+				<div class="container">
+					<div class="row">
+						<a href="#" class="col-lg-3 col-md-6 col-sm-6 header--logo">
+							<img src="styles/img/logo.jpg" alt="" class="d-sm-block d-none">
+							<img src="styles/img/logo--footer.jpg" alt="" class="d-sm-none d-block">
+						</a>
+						<div class="col-lg-6 header-top--company d-lg-flex d-none">
+							<h1 class="header-top--company-text">ЦЕНТР СОВРЕМЕННОЙ СТОМАТОЛОГИИ</h1>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6 header-top--contact">
+							<ul class="contact--info">
+								<li>
+									<span class="contact--info-image tel"></span>
+									<a href="tel:+74991100157">+7 499 110 01 57</a>
+								</li>
+								<li>
+									<span class="contact--info-image adres"></span>
+									<span>Александры Монаховой, 97</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-bottom">
+				<div class="container">
+					<div class="row">
+						<nav class="header--nav">
+							<button class="header--nav__mobile-btn">
+								<span></span>
+								<span></span>
+								<span></span>
+							</button>
+						
+							<ul class="header--nav__mobile">
+								<li>
+									<a href="/main.html">Главная</a>
+								</li>
+								<li>
+									<a href="/about.html">О клинике</a>
+								</li>
+								<li>
+									<a href="/services.html">Услуги</a>
+									
+									<ul>
+										<li>
+											<a href="/services-category.html">Комплексная диагностика</a>
+											<ul>
+												<li>
+													<a href="/services-detail.html">Эффективные методы постановки диагноза</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение пульпита и периодонтита под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Извлечение инородных тел и распломбировка сложных зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов за один день</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Реставрация зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Стоматологические услуги в выходные дни</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="/services-category.html">Лечение зубов терапия</a>
+											<ul>
+												<li>
+													<a href="/services-detail.html">Эффективные методы постановки диагноза</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение пульпита и периодонтита под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Извлечение инородных тел и распломбировка сложных зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов за один день</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Реставрация зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Стоматологические услуги в выходные дни</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="/services-category.html">Протезирование зубов</a>
+											<ul>
+												<li>
+													<a href="/services-detail.html">Эффективные методы постановки диагноза</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение пульпита и периодонтита под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Извлечение инородных тел и распломбировка сложных зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов за один день</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Реставрация зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Стоматологические услуги в выходные дни</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="/services-category.html">Имплантация зубов</a>
+											<ul>
+												<li>
+													<a href="/services-detail.html">Эффективные методы постановки диагноза</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение пульпита и периодонтита под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Извлечение инородных тел и распломбировка сложных зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов за один день</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Реставрация зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Стоматологические услуги в выходные дни</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="/services-category.html">Хирургия и хирургическая пародонтология </a>
+											<ul>
+												<li>
+													<a href="/services-detail.html">Эффективные методы постановки диагноза</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение пульпита и периодонтита под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Извлечение инородных тел и распломбировка сложных зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов за один день</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Реставрация зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Стоматологические услуги в выходные дни</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="/services-category.html">Гигиена. Пародонтология. Профилактика</a>
+											<ul>
+												<li>
+													<a href="/services-detail.html">Эффективные методы постановки диагноза</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение пульпита и периодонтита под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Извлечение инородных тел и распломбировка сложных зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов за один день</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Реставрация зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Стоматологические услуги в выходные дни</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="/services-category.html">Отбеливание зубов</a>
+											<ul>
+												<li>
+													<a href="/services-detail.html">Эффективные методы постановки диагноза</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение пульпита и периодонтита под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Извлечение инородных тел и распломбировка сложных зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов за один день</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Реставрация зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Стоматологические услуги в выходные дни</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="/services-category.html">Исправление прикуса ортодонтия</a>
+											<ul>
+												<li>
+													<a href="/services-detail.html">Эффективные методы постановки диагноза</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение пульпита и периодонтита под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Извлечение инородных тел и распломбировка сложных зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов за один день</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Реставрация зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Стоматологические услуги в выходные дни</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="/services-category.html">Детская стоматология</a>
+											<ul>
+												<li>
+													<a href="/services-detail.html">Эффективные методы постановки диагноза</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение пульпита и периодонтита под микроскопом</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Извлечение инородных тел и распломбировка сложных зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Лечение зубов за один день</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Реставрация зубов</a>
+												</li>
+												<li>
+													<a href="/services-detail.html">Стоматологические услуги в выходные дни</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Цены</a>
+								</li>
+								<li>
+									<a href="/promotions.html">Акции</a>
+								</li>
+								<li>
+									<a href="/specialists.html">Специалисты</a>
+								</li>
+								<li>
+									<a href="#">Галерея</a>
+								</li>
+								<li>
+									<a href="#">Отзывы</a>
+								</li>
+								<li>
+									<a href="#">Контакты</a>
+								</li>
+							</ul>
+							
+							<form class="search--row" action="" method="get">
+								<button></button>
+								<input type="search" class="search--row__input" placeholder="Введите ключевое слово...">
+							</form>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<main>
+			<div class="bread--crumbs">
+				<div class="container">
+					<ul>
+						<li>
+							<a href="#">Главная</a>
+						</li>
+						<li>
+							<a href="#">Специалисты</a>
+						</li>
+						<li>
+							<a href="#" class="bread--crumbs__current">Фамилия Имя Отчество</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="container">
+				<div class="row">
+					
+					<article class="the_specialists_det--main">
+						<header>
+							<div class="commands--item col-lg-3 col-md-4 col-sm-12">
+								<div class="commands--item__card" style="background-image: url(styles/img/temp/commands--1.jpg)"></div>
+							</div>
+							
+							<div class="the_specialists_det--head col-lg-9 col-md-8 col-sm-12">
+								<h2><span>Фамилия</span> имя отчество</h2>
+								<h3>Стоматолог-ортодонт</h3>
+								<div class="typography">
+									<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+								</div>
+							</div>
+						</header>
+						<section class="the_specialists_det--certificates">
+							<div class="typography">
+								<h2>сертификаты</h2>
+							</div>
+							<div class="the_specialists_det--certificates__row">
+								<div class="the_specialists_det--certificates__item">
+									<a href="#"><img src="styles/img/temp/sertificate--1.jpg" alt=""></a>
+								</div>
+								<div class="the_specialists_det--certificates__item">
+									<a href="#"><img src="styles/img/temp/sertificate--1.jpg" alt=""></a>
+								</div>
+								<div class="the_specialists_det--certificates__item">
+									<a href="#"><img src="styles/img/temp/sertificate--2.jpg" alt=""></a>
+								</div>
+							</div>
+						</section>
+						<footer>
+							<div class="typography">
+								<h3>Where does it come from?</h3>
+								<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+							</div>
+							
+							<div class="pagination--inside">
+								<ul>
+									<li>
+										<a href="#">Предыдущий</a>
+									</li>
+									<li>
+										<a href="#">Следующий</a>
+									</li>
+								</ul>
+							</div>
+							
+						</footer>
+					</article>
+					
+				</div>
+			</div>
+			
+			<div class="inside--bottom">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<form>
+								<h2>записаться на прием</h2>
+								<div class="label--row">
+									<label class="label--input">
+										<span>ваше Имя<sup>*</sup></span>
+										<input type="text" placeholder="Ваше имя" required="">
+									</label>
+								</div>
+								<div class="label--row">
+									<label class="label--input">
+										<span>телефон<sup>*</sup></span>
+										<input type="text" class="phone--input" placeholder="+7 (___) ___-__-__" required="">
+									</label>
+								</div>
+								<div class="label--row">
+									<label class="label--input">
+										<span>e-mail</span>
+										<input type="text" class="email--input" placeholder="Ваш E-MAIL">
+									</label>
+								</div>
+								
+								<p>Нажимая кнопку “Отправить”, Вы даете согласие на обработку <a href="#">персональных данных</a></p>
+								<button class="button" data-targetmodal="feedback">записаться на прием</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		
+		<footer>
+			<div class="footer-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-md-6">
+							<a href="#" class="footer--logo"><img src="styles/img/logo--footer.jpg" alt=""></a>
+						</div>
+						<div class="col-lg-4 col-md-6 col-sm-6">
+							<nav class="footer--links">
+								<ul class="header--nav__mobile">
+									<li><a href="#">Главная</a></li>
+									<li><a href="#">Специалисты</a></li>
+									<li><a href="#">О клинике</a></li>
+									<li><a href="#">Галерея</a></li>
+									<li><a href="#">Услуги</a></li>
+									<li><a href="#">Отзывы</a></li>
+									<li><a href="#">Цены</a></li>
+									<li><a href="#">Контакты</a></li>
+									<li><a href="#">Акции</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="col-lg-4 col-sm-6">
+							<ul class="contact--info">
+								<li>
+									<span class="contact--info-image tel"></span>
+									<a href="tel:+74991100157">+7 499 110 01 57</a>
+								</li>
+								<li>
+									<span class="contact--info-image adres"></span>
+									<span>Александры Монаховой, 97</span>
+								</li>
+								<li>
+									<span class="contact--info-image clock"></span>
+									<span>Пн-Сб: 10:00-21:00, Вс: 10:00-20:00</span>
+								</li>
+								<li>
+									<span class="contact--info-image mail"></span>
+									<a href="mailto:info@plombakoronka.ru">info@plombakoronka.ru</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="container">
+					<div class="row justify-content-between align-items-center footer-bottom__row">
+						<p class="col-lg-4 col-md-4 col-sm-6">Copyright © 2017 - 2018 Пломба&Коронка</p>
+						<p class="col-lg-4 col-md-4 col-sm-6">О возможных противопоказаниях проконсультируйтесь со специалистом</p>
+						<p class="col-lg-4 col-md-4"><a href="https://webpult.pro/corporate" target="_blank">Создание сайта</a> - компания “ВебПульт”</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	
+		<script src="styles/js/jquery-3.3.1.min.js"></script>
+		
+		<script src="styles/slick/slick.js"></script>
+		<script src="styles/customscrollbar/jquery.mCustomScrollbar.js"></script>
+		
+		<script src="styles/inputmask/jquery.inputmask.bundle.js"></script>
+		<script src="styles/inputmask/phone.js"></script>
+		<script src="styles/inputmask/phone-ru.js"></script>
+		
+		<script src="styles/js/main.js"></script>
+	</body>
+</html>

@@ -62,11 +62,11 @@
 
 @font-face {
 	font-family: 'plomba-ico';
-	src:  	url('../fonts/plomba-ico.eot?2sroru');
-	src:  	url('../fonts/plomba-ico.eot?2sroru#iefix') format('embedded-opentype'),
-			url('../fonts/plomba-ico.ttf?2sroru') format('truetype'),
-			url('../fonts/plomba-ico.woff?2sroru') format('woff'),
-			url('../fonts/plomba-ico.svg?2sroru#plomba-ico') format('svg');
+	src:  	url('../fonts/plomba-ico.eot?byu3vn');
+	src:  	url('../fonts/plomba-ico.eot?byu3vn#iefix') format('embedded-opentype'),
+			url('../fonts/plomba-ico.ttf?byu3vn') format('truetype'),
+			url('../fonts/plomba-ico.woff?byu3vn') format('woff'),
+			url('../fonts/plomba-ico.svg?byu3vn#plomba-ico') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -522,6 +522,169 @@ body.openModal {
 	line-height: 25px;
 	margin: 0 0 20px 0;
 	color: #000000;
+}
+.typography h3 {
+    font-size: 25px;
+    color: #000000;
+    margin: 23px 0 18px 0;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: "BigNoodleTitlingCyr";
+    font-weight: 700;
+}
+
+/*
+  font-family: 'plomba-ico' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+*/
+.pagination {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.pagination ul {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-align: end;
+	align-items: flex-end;
+}
+.pagination ul li {
+	list-style: none;
+	display: block;
+	line-height: 1;
+}
+.pagination ul li a {
+	text-decoration: none!important
+}
+.pagination ul li a:not(.pagination--arrow) {
+	display: block;
+	color: #010101;
+	font-size: 21px;
+	transition: color .35s;
+	line-height: 1;
+	font-family: "BigNoodleTitlingCyr";
+	font-weight: 700;
+	margin: 0 7px;
+}
+.pagination ul li a.active {
+	font-size: 27px;
+}
+.pagination ul li a.active , .pagination ul li a:hover {
+	color: #ff301c;
+}
+
+.pagination--arrow {
+	font-size: 13px;
+	line-height: 1;
+	color: #010101;
+	transform: translateY(-5px);
+	display: block;
+}
+.pagination--arrow:before {
+	font-family: 'plomba-ico' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.pagination--arrow__left {
+	margin-right: 3px;
+}
+.pagination--arrow__left:before {
+	content: "\e90c";
+}
+.pagination--arrow__right:before {
+	content: "\e90d";
+}
+.pagination--arrow__right {
+	margin-left: 3px;
+}
+
+
+.pagination--inside {
+	width: 100%;
+	display: block;
+}
+.pagination--inside ul {
+	width: 100%;
+	
+	margin: 0;
+	padding: 0;
+	
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+.pagination--inside ul li {
+	display: block;
+	list-style: none;
+	
+	margin: 0;
+	padding: 0;
+}
+.pagination--inside ul li a {
+	display: block;
+	color: #000000;
+	font-size: 14px;
+	text-decoration: none!important;
+	transition: color .35s;
+}
+.pagination--inside ul li a:hover {
+	color: #ff301c;
+}
+.pagination--inside ul li a:before , .pagination--inside ul li a:after {
+	font-family: 'plomba-ico' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+	font-size: 11px;
+}
+.pagination--inside ul li:first-child a:before {
+	content: "\e90c";
+	display: inline-block;
+	margin-right: 9px
+}
+.pagination--inside ul li:last-child a:after {
+	content: "\e90d";
+	display: inline-block;
+	margin-left: 9px
 }
 /*----------------------- Хлебные крошки -----------------------*/
 .bread--crumbs {
@@ -2524,7 +2687,7 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 .promotions--main {
 	display: block;
 	width: 100%;
-	margin: 14px 0 0 0;
+	margin: 14px 0 62px 0
 }
 .promotions--row {
 	display: -ms-flexbox;
@@ -2537,6 +2700,8 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	justify-content: flex-start;
 	-ms-flex-align: stretch;
 	align-items: stretch;
+	
+	margin-bottom: 38px;
 }
 .promotions--item {
 	text-decoration: none!important;
@@ -2672,6 +2837,251 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 }
 .promotions--item:hover .promotions--arrow {
 	fill: #fff;
+}
+/*----------------------- Детальная страница акции -----------------------*/
+.promotion--main {
+	display: block;
+	width: 100%;
+	padding: 0 15px;
+	margin: 22px 0 0 0;
+}
+.promotion--main .typography {
+	border-bottom: 1px solid #e5e5e5;
+	padding-bottom: 7px;
+	margin-bottom: 15px;
+}
+.promotion--image {
+	display: block;
+	width: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+	
+	margin: 0 0 42px 0
+}
+.promotion--image > img {
+	display: block;
+	width: 100%
+}
+
+.promotion--main header {
+	padding-bottom: 32px;
+	border-bottom: 1px solid #e5e5e5;
+	margin-bottom: 23px
+}
+.promotion--main header h2 {
+	display: block;
+	width: 100%;
+	text-align: left;
+	margin: 0 0 13px 0;
+	text-transform: uppercase;
+	
+	font-size: 30px;
+	color: #000000;
+	line-height: 1.25em;
+	
+	font-family: "BigNoodleTitlingCyr";
+	font-weight: 700;
+}
+.promotion--main header time {
+	display: block;
+	width: 100%;
+	text-align: left;
+	color: #000000;
+	font-size: 14px;
+	margin: 0;
+	line-height: 1;
+}
+.promotion--main .pagination--inside {
+	margin-bottom: 63px
+}
+/*----------------------- Наши специалисты -----------------------*/
+.the_specialists--main {
+	display: block;
+	width: 100%;
+	margin: 14px 0 35px 0
+}
+.the_specialists--row {
+	width: 100%;
+	
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+.the_specialists--row .commands--item {
+	width: auto!important;
+	padding-bottom: 30px
+}
+/*----------------------- Наши специалисты (детально) -----------------------*/
+.the_specialists_det--main {
+	display: block;
+	width: 100%;
+	padding: 0 15px;
+	margin: 22px 0 63px 0
+}
+.the_specialists_det--main header {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	
+	margin-left: -15px;
+	margin-right: -15px;
+	
+	padding-bottom: 50px;
+}
+.the_specialists_det--main header .commands--item__card:after {
+	display: none!important
+}
+
+.the_specialists_det--head {
+	display: block;
+	padding-left: 34px;
+	padding-top: 10px;
+}
+.the_specialists_det--head h2 {
+    font-family: "BigNoodleTitlingCyr";
+    font-weight: 700;
+    font-size: 42px;
+    text-transform: uppercase;
+	color: #000000;
+	display: block;
+	width: 100%;
+	text-align: left;
+	margin: 0 0 5px;
+}
+.the_specialists_det--head h2 span {
+	color: #ff301c;
+}
+.the_specialists_det--head h3 {
+	font-size: 16px;
+	margin: 0 0 34px;
+	color: #2b2e34;
+	display: block;
+	text-align: left;
+	width: 100%;
+}
+.the_specialists_det--certificates {
+	display: block;
+	width: 100%;
+}
+.the_specialists_det--certificates .typography {
+	border-top: 1px solid #e5e5e5;
+	display: block;
+	width: 100%;
+	padding: 46px 0 21px 0;
+}
+.the_specialists_det--certificates h2 {
+	font-size: 25px;
+	color: #000000;
+	margin: 0;
+	display: inline-block;
+	width: 100%;
+	text-align: left;
+	text-transform: uppercase;
+	font-family: "BigNoodleTitlingCyr";
+	font-weight: 700;
+}
+.the_specialists_det--certificates__row {
+	margin-left: -10px;
+	margin-right: -10px;
+	margin-bottom: 19px;
+	
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+}
+.the_specialists_det--certificates__item {
+	padding: 5px 10px;
+	display: block;
+}
+.the_specialists_det--certificates__item a {
+	display: block;
+	width: 100%;
+	
+	padding: 10px;
+	height: 206px;
+	overflow: hidden;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.21);
+	border-radius: 10px;
+	overflow: hidden;
+	
+	position: relative;
+	left: 0;
+	top: 0;
+}
+.the_specialists_det--certificates__item a:before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,48,28,0.8);
+	z-index: 3;
+	opacity: 0;
+	transition: opacity .35s;
+	content: '';
+}
+.the_specialists_det--certificates__item a:hover:before {
+	opacity: 1;
+}
+.the_specialists_det--certificates__item a:after {
+    display: block;
+    font-family: 'plomba-ico' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 25px;
+    color: #fff;
+    content: "\e90b";
+    transition: opacity .35s;
+	
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 4;
+	transform: translateX(-50%) translateY(-50%);
+	opacity: 0;
+}
+.the_specialists_det--certificates__item a:hover:after {
+	opacity: 1;
+}
+.the_specialists_det--certificates__item a img {
+	display: block;
+	height: 186px
+}
+.the_specialists_det--main footer {
+	display: block;
+	width: 100%
+}
+.the_specialists_det--main footer .typography {
+	padding-bottom: 26px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #e5e5e5
 }
 
 
@@ -3023,6 +3433,11 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 		color: #000;
 		text-align: center;
 	}
+	/*----------------------- Наши специалисты (детально) -----------------------*/
+	.the_specialists_det--certificates__row {
+		-ms-flex-pack: center;
+		justify-content: center;
+	}
 }
 @media(max-width: 768px){
 	.section--title {
@@ -3175,6 +3590,14 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	.services--table__price {
 		margin-bottom: 30px
 	}
+	/*----------------------- Наши специалисты (детально) -----------------------*/
+	.the_specialists_det--main header .commands--item .commands--item__card {
+		background-position: center top;
+	}
+	.the_specialists_det--head {
+		padding-left: 15px;
+		padding-top: 30px;
+	}
 }
 @media(max-width: 576px){
 	/*----------------------- Шапка -----------------------*/
@@ -3291,6 +3714,18 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 		padding-left: 0;
 		padding-right: 0
 	}
+	/*----------------------- Наши специалисты -----------------------*/
+	.commands--item {
+		-ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	/*----------------------- Наши специалисты (детально) -----------------------*/
+	.the_specialists_det--main header .commands--item {
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
 }
 @media(max-width: 514px){
 	/*----------------------- Нижняя часть главной страницы -----------------------*/
@@ -3335,6 +3770,15 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	}
 	.commands--row .slick-next {
 		transform: translateY(0) translateX(25%);
+	}
+	/*----------------------- Наши специалисты -----------------------*/
+	.commands--item {
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	.commands--item__card {
+		background-position: center top
 	}
 }
 @media(max-width: 420px){
