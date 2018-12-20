@@ -284,40 +284,96 @@ $(function(){
 	Поля для ввода
 	--------------
 	*/
+	//------------------------
+	//Проверка полей для ввода
+	//------------------------
+	function _checkPhone(value){
+		var phoneFilter = /^[+]*[7]\s[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
+		if(!phoneFilter.test(value)){
+			return false;
+		}
+		return true;
+	}
+	function _checkPhone_Start(value){
+		var phoneFilter = /^[+]*[7]\s[(]{0,1}([0-9][_]{2}|[0-9]{2}[_]|[0-9]){1,3}[)]{0,1}([-\s\./0-9]|\s([_]|[0-9]){3}[-]([_]|[0-9]){2}[-]([_]|[0-9]){2})*$/g;
+		if(!phoneFilter.test(value)){
+			return false;
+		}
+		return true;
+	}
+	function _validate(email){
+		var emailFilter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/g;
+		if (!emailFilter.test(email)) {
+			return false;
+		}
+		return true;
+	}
+	
+	if($('.label_normal--input').length > 0){
+		///
+		///Нормальные поля для ввода
+		///
+		$('.label_normal--input .phone--input').each(function(){
+			checkNormalInput($(this),'phone','focusout');
+		});
+		$('.label_normal--input input:not(.phone--input) , .label_normal--input textarea').each(function(){
+			checkNormalInput($(this));
+		});
+		
+		
+		function checkNormalInput(self,selected,mod){
+			if(self.hasClass('phone--input') == false && $(this).hasClass('email--input') == false){
+				if(self.val() != ''){
+					self.parents('.label_normal--input').addClass('focus');
+				} else {
+					self.parents('.label_normal--input').removeClass('focus');
+				}
+			} else {
+				if(selected == 'phone'){
+					if(self.hasClass('phone--input') == true){
+						switch(mod){
+							case 'focusin' : {
+								self.parents('.label_normal--input').addClass('focus');
+							} break;
+							case 'focusout' : {
+								if(_checkPhone_Start(self.val()) == true){
+									self.parents('.label_normal--input').addClass('focus');
+								} else {
+									self.parents('.label_normal--input').removeClass('focus');
+								}
+							} break;
+						}
+					}
+				}
+				if(self.hasClass('email--input') == true){
+					if(_validate(self.val()) == true){
+						self.parents('.label_normal--input').addClass('focus');
+					} else {
+						self.parents('.label_normal--input').removeClass('focus');
+					}
+				}
+			}
+		}
+		
+		$('.label_normal--input input:not(.phone--input) , .label_normal--input textarea').focusin(function(){
+			checkNormalInput($(this));
+		}).focusout(function(){
+			checkNormalInput($(this));
+		}).keyup(function(){
+			checkNormalInput($(this));
+		});
+		
+		$('.label_normal--input .phone--input').focusin(function(){
+			checkNormalInput($(this),'phone','focusin');
+		}).focusout(function(){
+			checkNormalInput($(this),'phone','focusout');
+		});
+	}
+	
+	if($('.phone--input').length > 0){
+		$('.phone--input').inputmask({"mask": "+7 (999) 999-99-99"});
+	}
 	if($('.label--input').length > 0){
-		//------------------------
-		//Проверка полей для ввода
-		//------------------------
-		function _checkPhone(value){
-			var phoneFilter = /^[+]*[7]\s[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
-			if(!phoneFilter.test(value)){
-				return false;
-			}
-			return true;
-		}
-		function _checkPhone_Start(value){
-			var phoneFilter = /^[+]*[7]\s[(]{0,1}([0-9][_]{2}|[0-9]{2}[_]|[0-9]){1,3}[)]{0,1}([-\s\./0-9]|\s([_]|[0-9]){3}[-]([_]|[0-9]){2}[-]([_]|[0-9]){2})*$/g;
-			if(!phoneFilter.test(value)){
-				return false;
-			}
-			return true;
-		}
-		function _validate(email){
-			var emailFilter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/g;
-			if (!emailFilter.test(email)) {
-				return false;
-			}
-			return true;
-		}
-		
-		
-		
-		
-		
-		
-		if($('.phone--input').length > 0){
-			$('.phone--input').inputmask({"mask": "+7 (999) 999-99-99"});
-		}
 		
 		$('.label--input input').each(function(){
 			if($(this).hasClass('phone--input') == true){
@@ -363,18 +419,18 @@ $(function(){
 			$parent.find('[required]').each(function(){
 				if($(this).hasClass('phone--input') == true){
 					if(_checkPhone($(this).val()) == true){
-						$(this).parents('.label--input').removeClass('error--input');
+						$(this).parents('.label--input , .label_normal--input').removeClass('error--input');
 					} else {
-						$(this).parents('.label--input').addClass('error--input');
+						$(this).parents('.label--input , .label_normal--input').addClass('error--input');
 						$counter++;
 					}
 				} else {
 					if($(this).hasClass('email--input') == false){
 						if($(this).val() == ''){
-							$(this).parents('.label--input').addClass('error--input');
+							$(this).parents('.label--input , .label_normal--input').addClass('error--input');
 							$counter++;
 						} else {
-							$(this).parents('.label--input').removeClass('error--input');
+							$(this).parents('.label--input , .label_normal--input').removeClass('error--input');
 						}
 					} else {
 						if($(this).val() != ''){
@@ -396,9 +452,9 @@ $(function(){
 		if(block.val() != ''){
 			block.prop('required',true);
 			if(_validate(block.val()) == false){
-				block.parents('.label--input').addClass('error--input');
+				block.parents('.label--input , .label_normal--input').addClass('error--input');
 			} else {
-				block.parents('.label--input').removeClass('error--input');
+				block.parents('.label--input , .label_normal--input').removeClass('error--input');
 			}
 		} else {
 			block.prop('required',false);
@@ -412,7 +468,7 @@ $(function(){
 		});
 		$('.email--input').focusout(function(){
 			if($(this).val() == ''){
-				$(this).parents('.label--input').removeClass('error--input');
+				$(this).parents('.label--input , .label_normal--input').removeClass('error--input');
 				$(this).prop('required',false);
 			} else {
 				_checkEmail($(this));
@@ -443,6 +499,28 @@ $(function(){
 			actualSize: false,
 			thumbnail: false,
 			selector: '.certificate--gallery'
+		});
+	}
+	/*
+	--------------
+	Страница - Галерея
+	--------------
+	*/
+	if($('.gallery--item__image--slider').length > 0){
+		$('.gallery--item__image--slider').ionRangeSlider({
+			min: 0,
+			max: 100,
+			from: 50,
+			hide_min_max: true,
+			hide_from_to: true,
+			onChange: function(data){
+				var $parent = data['input'][0]['offsetParent'];
+				var $width = 100-data.from;
+				$($parent).find('.gallery--item__image--after').css('width',$width+'%')
+				//console.log($width);
+				
+				//console.log($($parent).find('.gallery--item__image--after'));
+			}
 		});
 	}
 	/*
