@@ -2812,6 +2812,12 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 }
 
 
+.table--inner {
+	display: block;
+	width: 100%;
+	max-height: 844px;
+	margin-bottom: 56px;
+}
 .table--container {
 	display: block;
 	width: 100%
@@ -2841,7 +2847,7 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	padding-bottom: 26px;
 	border-bottom: 1px solid #e5e5e5
 }
-.table--row:not(:first-child) p:nth-child(3) {
+.table--row:not(:first-child) p:last-child {
 	font-size: 23px;
 	color: #ff301c;
 	text-transform: uppercase;
@@ -3952,6 +3958,14 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	margin-top: -30px;
 	margin-bottom: 69px;
 }
+/*----------------------- Прайс листы -----------------------*/
+.price__page--row {
+	display: block;
+	width: 100%;
+	padding: 0 15px;
+	margin: 14px 0 0 0;
+}
+
 
 
 
@@ -4027,6 +4041,9 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	}
 	.table--row p:nth-child(2) {
 		width: 425px
+	}
+	.table--row p:last-child {
+		width: 167px
 	}
 	/*----------------------- Галерея -----------------------*/
 	.gallery--item__image {
