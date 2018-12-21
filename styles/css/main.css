@@ -3744,8 +3744,214 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	justify-content: flex-start;
 	-ms-flex-align: stretch;
 	align-items: stretch;
+	margin: 0 0 26px 0
 }
 
+.reviews_video--item {
+	display: block;
+	width: 100%;
+	padding: 0 0 36px 0;
+	
+	cursor: pointer;
+}
+.reviews_video--item__image {
+	display: block;
+	width: 100%;
+	border-radius: 10px;
+	height: 248px;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.21);
+	margin: 0 0 16px 0;
+	
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	
+	position: relative;
+	left: 0;
+	top: 0;
+}
+.reviews_video--item__image:after {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 41px;
+	height: 41px;
+	content: '';
+	background: url(../img/svg/video--play.svg) center no-repeat;
+	background-size: cover;
+	
+	transition: transform .35s;
+}
+.reviews_video--item:hover .reviews_video--item__image:after {
+	transform: translateX(-50%) translateY(-50%) scale(1.2);
+}
+.reviews_video--item h3 {
+	text-transform: uppercase;
+	font-family: "BigNoodleTitlingCyr";
+	font-weight: 700;
+	margin: 0 0 0 0;
+	color: #ff301c;
+	font-size: 23px;
+	display: block;
+	width: 100%;
+	text-align: left;
+}
+.reviews_video--item time {
+	margin: 0;
+	display: block;
+	width: 100%;
+	text-align: left;
+	color: #000000;
+}
+/*----------------------- Страница контакты -----------------------*/
+.section--contacts {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	
+	-ms-flex-align: center;
+	align-items: center;
+	
+	margin: 43px 0 0 0;
+	
+	width: 100%
+}
+.section--contacts__left {
+	display: block;
+	width: 100%;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.21);
+	padding: 32px 35px 18px;
+	border-radius: 10px;
+	background-color: #fff;
+}
+.section--contacts__left h2 {
+	text-transform: uppercase;
+	font-family: "BigNoodleTitlingCyr";
+	font-weight: 700;
+	margin: 0 0 24px 0;
+	color: #ff301c;
+	font-size: 35px;
+	display: block;
+	width: 100%;
+	text-align: left;
+}
+.section--contacts__left .contact--info li {
+	margin-bottom: 20px;
+	padding-left: 39px;
+}
+.section--contacts__left .contact--info li > .contact--info-image.mail + a {
+	font-size: 17px
+}
+
+.section--contacts__left .contact--info li > .contact--info-image.adres:before {
+	font-size: 25px;
+	transform: translateX(0) translateY(-50%);
+	left: 3px;
+}
+.section--contacts__left .contact--info li > .contact--info-image.tel:before {
+    font-size: 24px;
+    transform: translateX(0) translateY(-50%);
+    left: 4px;
+}
+.section--contacts__left .contact--info li > .contact--info-image.mail:before {
+    font-size: 14px;
+    transform: translateX(0) translateY(-50%);
+    left: 2px;
+}
+.section--contacts__left .contact--info li > .contact--info-image.clock:before {
+    transform: translateX(0) translateY(-50%);
+    left: 3px;
+}
+
+.section--contacts__right {
+	display: block;
+	width: 100%;
+	padding: 0 20px;
+	
+	position: relative;
+	left: 0;
+	top: 0;
+}
+.section--contacts__right:after {
+    position: absolute;
+    right: 0;
+    top: -22.5%;
+    width: 112%;
+    height: 145%;
+    border-radius: 10px;
+    background-color: #ff301c;
+    background-image: url(../img/svg/difference-item.svg);
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: center;
+    content: '';
+    z-index: -1;
+}
+.section--contacts__right h2 {
+	text-transform: uppercase;
+	font-family: "BigNoodleTitlingCyr";
+	font-weight: 700;
+	margin: 0 0 13px 0;
+	color: #ff301c;
+	font-size: 35px;
+	display: block;
+	width: 100%;
+	text-align: left;
+	color: #fff;
+	position: relative;
+	left: 0;
+	top: 0;
+	z-index: 2;
+}
+.section--contacts__right p {
+	display: block;
+	width: 100%;
+	text-align: left;
+	font-size: 17px;
+	line-height: 33px;
+	margin: 0;
+	color: #fff;
+	position: relative;
+	left: 0;
+	top: 0;
+	z-index: 2;
+}
+.section--contacts__right p b {
+	font-weight: 700;
+}
+.section--contacts__right p small {
+	font-size: 15px
+}
+.section--contacts__right hr {
+	width: 100%;
+	display: block;
+	height: 1px;
+	border: 0;
+	background-color: rgba(255,255,255,0.2);
+	margin: 24px 0 21px;
+	position: relative;
+	left: 0;
+	top: 0;
+	z-index: 2;
+}
+
+.contacts--map {
+	display: block;
+	width: 100%;
+	height: 529px;
+	position: relative;
+	left: 0;
+	top: 0;
+	z-index: -2;
+	margin-top: -30px;
+	margin-bottom: 69px;
+}
 
 
 
@@ -4111,6 +4317,22 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	.gallery--item__image {
 		height: 230px
 	}
+	/*----------------------- Страница контакты -----------------------*/
+	.section--contacts {
+		margin-top: 15px
+	}
+	.section--contacts__right {
+		padding: 32px 35px;
+		margin-top: 15px;
+	}
+	.section--contacts__right:after {
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.contacts--map {
+		height: 50vh
+	}
 }
 @media(max-width: 768px){
 	.section--title {
@@ -4295,6 +4517,17 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	.reviews--row .feedback--slide__photo {
 		float: left;
 		margin-right: 15px
+	}
+	/*----------------------- Страница контакты -----------------------*/
+	.section--contacts__right , .section--contacts__left {
+		padding-left: 20px;
+		padding-right: 20px
+	}
+	.section--contacts__right p {
+		line-height: 22px;
+	}
+	.contacts--map {
+		margin-top: 15px;
 	}
 }
 @media(max-width: 576px){
@@ -4548,6 +4781,8 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 		position: static;
 		height: 246px;
 		opacity: 1;
+		padding-left: 21px;
+		padding-right: 21px;
 	}
 	.services--item__second > p {
 		display: none

@@ -525,6 +525,22 @@ $(function(){
 	}
 	/*
 	--------------
+	Страница - отзывы
+	--------------
+	*/
+	if($('.reviews_video--item').length > 0){
+		$('.reviews_video--row').lightGallery({
+			download: false,
+			counter: false,
+			share: false,
+			autoplay: false,
+			actualSize: false,
+			thumbnail: false,
+			selector: '.reviews_video--item'
+		});
+	}
+	/*
+	--------------
 	Карта
 	--------------
 	*/
