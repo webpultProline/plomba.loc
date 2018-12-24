@@ -869,6 +869,50 @@ body.openModal {
 	top: 50%;
 	transform: translateX(-50%) translateY(-50%);
 }
+
+/*----------------------- Социальные иконки -----------------------*/
+.socials--links {
+	display: block;
+}
+.socials--links ul {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.socials--links ul li {
+	list-style: none;
+	display: block;
+}
+.socials--links ul li a , .socials--links ul li button {
+	display: block;
+	text-decoration: none!important;
+	padding: 0;
+	margin: 0;
+	outline: none;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+}
+.socials--links ul li a svg , .socials--links ul li button svg {
+	transition: fill .35s;
+}
+.socials--links ul li a:hover svg , .socials--links ul li button:hover svg {
+	fill: #ff301c;
+}
+.socials--links__image {
+	display: block;
+}
 /*----------------------- Хлебные крошки -----------------------*/
 .bread--crumbs {
 	display: block;
@@ -895,6 +939,9 @@ body.openModal {
 	margin: 0;
 	padding: 0;
 	display: block;
+}
+.socials--links li:not(:last-child) {
+	margin-right: 21px;
 }
 .bread--crumbs ul li a {
 	display: block;
@@ -2245,6 +2292,11 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	width: 100%
 }
 
+.footer-top .socials--links {
+    margin-top: 30px;
+    padding-left: 97px;
+}
+
 .footer-top .contact--info li:first-child {
 	margin-top: 3px
 }
@@ -2815,9 +2867,70 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 .table--inner {
 	display: block;
 	width: 100%;
-	max-height: 844px;
 	margin-bottom: 56px;
 }
+.table--inner--slider {
+	max-height: 760px;
+	display: block;
+	width: 100%;
+	overflow: hidden
+}
+.table--inner--slider .table--row:first-child {
+	background-color: transparent;
+	border-radius: 0;
+	padding-top: 24px;
+	padding-bottom: 26px;
+}
+.table--inner--slider .table--row:first-child p {
+    font-size: 16px;
+    color: #000000;
+    text-transform: initial;
+    font-family: "PTSans";
+    font-weight: 400;
+}
+.table--inner--slider .table--row p:last-child {
+    font-size: 23px;
+    color: #ff301c;
+    text-transform: uppercase;
+    font-family: "BigNoodleTitlingCyr";
+    font-weight: 700;
+	width: 152px;
+}
+.table--inner--slider .table--row:first-child {
+	border-bottom: 1px solid #e5e5e5
+}
+
+.table--inner--slider .mCSB_inside > .mCSB_container {
+	margin-right: 14px
+}
+.table--inner--slider .mCSB_scrollTools .mCSB_draggerRail {
+	background-color: transparent;
+}
+.table--inner--slider .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	background: #e5e5e5;
+    filter: "alpha(opacity=1)";
+    -ms-filter: "alpha(opacity=1)";
+	width: 8px;
+}
+
+
+
+.table--inner--slider .table--row {
+	transition: background-color .35s;
+	background-color: transparent;
+}
+.table--inner--slider .table--row p {
+	transition: color .35s;
+}
+.table--inner--slider .table--row:hover {
+	background-color: #f3f3f3;
+}
+.table--inner--slider .table--row:hover p {
+	color: #ff301c;
+}
+
+
+
 .table--container {
 	display: block;
 	width: 100%
@@ -3963,7 +4076,7 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	display: block;
 	width: 100%;
 	padding: 0 15px;
-	margin: 14px 0 0 0;
+	margin: 14px 0 10px 0;
 }
 
 
@@ -4363,7 +4476,10 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	
 	
 	
-	
+	/*----------------------- Социальные иконки -----------------------*/
+	.footer-top .socials--links {
+		margin-bottom: 20px;
+	}
 	/*----------------------- Карусель на главной странице -----------------------*/
 	.main--carousel {
 		padding-bottom: 171px;
@@ -4548,6 +4664,10 @@ html[data-useragent='MSIE 10.0'] .main--bottom--price table tr > td:first-child 
 	}
 }
 @media(max-width: 576px){
+	/*----------------------- Социальные иконки -----------------------*/
+	.footer-top .socials--links {
+		padding-left: 0
+	}
 	/*----------------------- Шапка -----------------------*/
 	.header--logo {
 		margin-top: 10px;

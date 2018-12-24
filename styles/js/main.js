@@ -544,8 +544,8 @@ $(function(){
 	Страница прайслистов
 	--------------
 	*/
-	if($(".table--inner").length > 0){
-		$(".table--inner").mCustomScrollbar({
+	if($(".table--inner--slider").length > 0){
+		$(".table--inner--slider").mCustomScrollbar({
 			axis: 'y'
 		});
 	}
